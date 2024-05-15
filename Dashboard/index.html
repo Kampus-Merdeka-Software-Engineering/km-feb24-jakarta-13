@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Halaman Dashboard Superstore 13</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- Bagian Header -->
+    <header>
+      <!-- Bagian Navbar -->
+      <nav class="nav">
+        <div class="logo"><a href="index.html">Superstore13-jkt</a></div>
+
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#Dashboard">Dashboard</a></li>
+          <li><a href="#AboutUs">About Us</a></li>
+        </ul>
+      </nav>
+
+      <section id="Home">
+        <h1>HEADER BELOM ! (Kanan Gambar Animasi, Kiri Ket)</h1>
+      </section>
+    </header>
+
+    <!-- Bagian Dashboard - Section -->
+    <section id="Dashboard">
+      <h1>Dashboard Superstore</h1>
+      <br />
+
+      <div class="container">
+        <div class="box">
+          Analysis By <br />
+          Team 13
+        </div>
+        <div class="box">
+          <span class="sales-text">Total Sales</span>
+          <span class="sales-number">127.100.743</span>
+        </div>
+        <div class="box">
+          <span class="sales-text">Total Profit</span>
+          <span class="sales-number">13.455.261</span>
+        </div>
+        <div class="box">
+          <span class="sales-text">Total Product</span>
+          <span class="sales-number">1.813</span>
+        </div>
+        <div class="box">
+          <span class="sales-text">Total Customer</span>
+          <span class="sales-number">793</span>
+        </div>
+      </div>
+
+      <div class="container-card">
+        <div class="card">
+          <div class="card-header"></div>
+          <!-- Membuat Fitur Dropdown -->
+          <select>
+            <option value="orderdate1">Order Date (Tahun)</option>
+            <option value="orderdate2">2017</option>
+            <option value="orderdate3">2018</option>
+          </select>
+          <select>
+            <option value="category1">Category</option>
+            <option value="category2">Option 2</option>
+            <option value="category3">Option 3</option>
+          </select>
+          <select>
+            <option value="state1">State</option>
+            <option value="state2">Option 2</option>
+            <option value="state3">Option 3</option>
+          </select>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Total Sales Per Bulan</div>
+          <div>
+            <canvas id="myChartBulan"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Total Sales Per Tahun</div>
+          <div>
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Total Sales Per State</div>
+          <div>
+            <canvas id="myChartState"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian About Us = Terdapat tag  <article> & <section> -->
+    <article>
+      <section id="AboutUs">
+        <br />
+        <h2 style="text-align: center">About Us</h2>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum
+          dicta dolorum quos veritatis est, porro corporis voluptas nisi. Est
+          similique aliquam id soluta quisquam dignissimos et! Mollitia
+          repudiandae accusantium sed similique quidem, tempora esse? Dolorem,
+          reiciendis rerum inventore ratione dicta reprehenderit eos error
+          veritatis vitae repudiandae corrupti laborum voluptatem ut quas
+          distinctio aspernatur minus quo, laboriosam autem explicabo
+          accusantium quis et iure facere. Qui illo dicta molestiae quia eum
+          reprehenderit enim distinctio totam minima, molestias maxime
+          voluptatibus officiis corrupti quibusdam, possimus debitis praesentium
+          exercitationem non officia dignissimos rerum, animi quaerat quas. Fuga
+          excepturi a aspernatur, placeat beatae culpa tempore explicabo
+          repellendus. Dolorum molestias iste sed quod nesciunt veniam ullam vel
+          ipsum exercitationem corrupti consectetur pariatur cum porro dolore
+          accusamus, reprehenderit accusantium. Unde, esse. Consequuntur
+          assumenda iusto aspernatur ea neque natus voluptatibus quidem
+          praesentium aliquam expedita voluptatum corporis eos illo illum
+          similique odio quam alias blanditiis, eius esse quisquam accusantium
+          dicta omnis eveniet. Alias earum quia tempore eveniet natus quo
+          possimus enim quae, fugit consequuntur exercitationem rem nam quisquam
+          eligendi, amet sit in quis quam omnis excepturi aspernatur molestias.
+          Incidunt alias, ullam cum veniam, neque cumque accusantium nesciunt
+          corporis dolor enim odit quo voluptas iusto, mollitia ipsum nam
+          consequatur provident! Lorem, ipsum dolor sit amet consectetur
+          adipisicing elit. minus iure soluta quasi eos animi suscipit, at aut
+          non magnam id deserunt neque placeat repellat ad? Eum explicabo
+          eligendi, in repellat tempore inventore natus dolore officiis quaerat
+          nisi expedita itaque ipsum illo, deserunt omnis aut. Ea, hic sunt
+          commodi laudantium totam explicabo nostrum dolorum tenetur sequi!
+          Omnis distinctio quae voluptatibus. Beatae, corporis possimus deserunt
+          voluptate at cupiditate atque praesentium, numquam architecto officia
+          consectetur excepturi molestias ut libero in iusto? Ipsa dicta
+          reprehenderit omnis nihil, facere ipsam ratione deserunt tempora
+          recusandae mollitia facilis veritatis! Ea quis nihil deleniti harum?
+          Amet nisi, dolorem soluta magni illo recusandae, velit mollitia
+          voluptatem rerum quisquam placeat eius obcaecati ipsum hic eum quod,
+          culpa vel in nihil voluptate asperiores nostrum. Inventore ipsum
+          praesentium incidunt autem, beatae esse quasi enim harum reiciendis
+          vero illum, ex nemo rem. Dolore quo libero quam quis accusamus
+          officiis minus praesentium. Qui veritatis mollitia ipsa? Ducimus velit
+          aliquid error odit quaerat impedit perspiciatis harum at enim sint
+          quod quisquam quam dolore voluptatum, nobis ipsa aperiam similique.
+          Placeat voluptatibus sed sunt consequatur, quod ducimus necessitatibus
+          numquam doloremque distinctio tenetur cum, deserunt voluptatum ipsa.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi facere
+          commodi omnis ullam iure molestiae itaque minus, necessitatibus
+          placeat aut maxime reiciendis nesciunt officiis nisi voluptates.
+          Deserunt non magnam distinctio laborum tenetur? Animi maiores aliquam,
+          qui laboriosam dolorum consequatur nihil, molestias maxime labore non
+          fugit hic, earum voluptate sit ut in officia vero quasi temporibus
+          voluptatum ad obcaecati accusamus debitis unde? Nostrum, accusantium
+          aut sit excepturi esse quaerat quibusdam. Reprehenderit error
+          repellendus expedita unde! Saepe non, architecto aliquid quae optio
+          minus deserunt officiis culpa sunt reiciendis aperiam qui quisquam at
+          hic veniam exercitationem. Dolorum non officia dolorem eaque,
+          excepturi magnam rerum vel voluptates omnis, laudantium ducimus. Rem
+          esse eum reprehenderit ipsum odit mollitia, quos quod animi officia,
+          dolor aspernatur harum veniam error. Neque, ullam perferendis
+          temporibus voluptatum magnam reiciendis alias est facilis.
+        </p>
+      </section>
+    </article>
+
+    <!-- Bagian Footer -->
+    <br />
+    <footer id="footer">
+      <p>&copy; 2024 Section Jakarta - Team 13 - All Rights Reserved.</p>
+    </footer>
+
+    <!-- tag script digunakan untuk menghubungkan file HTML dengan file JavaScript  -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+/* untuk screen 768px (hp) */
+@media (max-width: 767px) {
+  /* Media query untuk responsif navbarnya */
+  .nav {
+    flex-direction: column; /* Menu ditampilkan dalam satu kolom */
+    align-items: flex-start; /* Logo dan menu ditampilkan di sisi kiri */
+    padding: 10px;
+  }
+
+  .nav li {
+    margin: 5px 0; /* Jarak antara item menu dalam mode responsif */
+  }
+
+  .nav li:first-child {
+    margin-top: 0; /* Menghapus margin atas untuk item menu pertama */
+  }
+
+  /* Gaya ikon hamburger */
+  .menu-icon {
+    display: none; /* Sembunyikan ikon di luar mode responsif */
+    cursor: pointer;
+  }
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+  }
+
+  /* Bagian Pertama */
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 80%;
+  }
+
+  /* Bagian kedua */
+  .container-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  select {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* untuk screen 768px dan 1023px (tablet) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tambahkan CSS spesifik untuk tablet jika  */
+}
+
+/* untuk screen 1023px (dekstop) */
+@media (min-width: 1024px) {
+  /* Tambahkan CSS spesifik untuk desktop jika perlu */
+}
+
+/* CSS bagian Navbar */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Menengahkan agar teks secara horizontal */
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  flex: 1; /* Pastikan ul mengambil ruang yang tersisa */
+}
+
+.nav li {
+  display: inline;
+  margin: 0 18px;
+}
+
+.nav li a,
+.nav .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.nav li a:hover:not(.logo),
+.nav .dropdown:hover .dropbtn {
+  background-color: #3498db;
+}
+
+.nav .logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  margin-right: auto;
+}
+
+main {
+  flex: 1;
+  margin-top: 50px;
+}
+
+section {
+  padding: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 100%;
+  margin-top: 30px;
+}
+
+.box {
+  width: 200px;
+  height: auto;
+  background-color: #3498db;
+  border-radius: 7px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  font-size: 15px;
+  color: black;
+}
+
+.box-two {
+  background-color: white;
+  width: 100px;
+  height: 600px;
+}
+
+.sales-text {
+  color: gray;
+}
+
+.sales-number {
+  color: black;
+  font-size: 20px;
+}
+
+.container-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px; /* jarak antar cardnya */
+  margin-top: 20px;
+}
+
+.card {
+  width: 340px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 32px;
+  background-color: lightgray;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  width: calc(20% - 20px);
+}
+
+.card-header {
+  font-weight: bold;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+select {
+  width: 70%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #3498db;
+  border-radius: 7px;
+  background-color: #3498db;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 38px;
+}
+
+option {
+  padding: 5px;
+}
+
+.container-home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 4px;
+}
+
+/* Bagian Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  height: 50px;
+  line-height: 50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
