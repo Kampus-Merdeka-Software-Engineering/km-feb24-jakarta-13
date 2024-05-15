@@ -1,237 +1,285 @@
-/* untuk screen 768px (hp) */
-@media (max-width: 767px) {
-  /* Media query untuk responsif navbarnya */
-  .nav {
-    flex-direction: column; /* Menu ditampilkan dalam satu kolom */
-    align-items: flex-start; /* Logo dan menu ditampilkan di sisi kiri */
-    padding: 10px;
-  }
-
-  .nav li {
-    margin: 5px 0; /* Jarak antara item menu dalam mode responsif */
-  }
-
-  .nav li:first-child {
-    margin-top: 0; /* Menghapus margin atas untuk item menu pertama */
-  }
-
-  /* Gaya ikon hamburger */
-  .menu-icon {
-    display: none; /* Sembunyikan ikon di luar mode responsif */
-    cursor: pointer;
-  }
-
-  .line {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin: 5px;
-  }
-
-  /* Bagian Pertama */
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .box {
-    width: 80%;
-  }
-
-  /* Bagian kedua */
-  .container-card {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 80%;
-  }
-
-  select {
-    width: 100%;
-    margin-left: 0;
-  }
-}
-
-/* untuk screen 768px dan 1023px (tablet) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  /* Tambahkan CSS spesifik untuk tablet jika  */
-}
-
-/* untuk screen 1023px (dekstop) */
-@media (min-width: 1024px) {
-  /* Tambahkan CSS spesifik untuk desktop jika perlu */
-}
-
-/* CSS bagian Navbar */
-.nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav ul {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Menengahkan agar teks secara horizontal */
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  flex: 1; /* Pastikan ul mengambil ruang yang tersisa */
-}
-
-.nav li {
-  display: inline;
-  margin: 0 18px;
-}
-
-.nav li a,
-.nav .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  margin-left: 10px;
-}
-
-.nav li a:hover:not(.logo),
-.nav .dropdown:hover .dropbtn {
-  background-color: #3498db;
-}
-
-.nav .logo a {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  margin-right: auto;
-}
-
-main {
-  flex: 1;
-  margin-top: 50px;
-}
-
-section {
-  padding: 20px;
-}
-
-body {
-  font-family: Arial, sans-serif;
-}
-
-h1 {
-  text-align: center;
-  margin-top: 70px;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  max-width: 100%;
-  margin-top: 30px;
-}
-
-.box {
-  width: 200px;
-  height: auto;
-  background-color: #3498db;
-  border-radius: 7px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 5px;
-  font-size: 15px;
-  color: black;
-}
-
-.box-two {
-  background-color: white;
-  width: 100px;
-  height: 600px;
-}
-
-.sales-text {
-  color: gray;
-}
-
-.sales-number {
-  color: black;
-  font-size: 20px;
-}
-
-.container-card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px; /* jarak antar cardnya */
-  margin-top: 20px;
-}
-
-.card {
-  width: 340px;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  padding: 32px;
-  background-color: lightgray;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  width: calc(20% - 20px);
-}
-
-.card-header {
-  font-weight: bold;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-select {
-  width: 70%;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #3498db;
-  border-radius: 7px;
-  background-color: #3498db;
-  font-size: 16px;
-  cursor: pointer;
-  margin-left: 38px;
-}
-
-option {
-  padding: 5px;
-}
-
-.container-home {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 4px;
-}
-
-/* Bagian Footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 20px;
-  height: 50px;
-  line-height: 50px;
-}
+:root {
+  --nav-bg: #03000e; 
+  --main-clr: dodgerblue;
+  --nav-shadow: 0px 3px var(--main-clr);
+} 
 
 * {
   margin: 0;
   padding: 0;
 }
+
+
+
+/* CSS bagian Navbar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  background: #03000e; /* Untuk warna Navbar */
+  box-shadow: var(--nav-shadow);
+}
+
+nav .logo {
+  color: #fff;
+  text-decoration-color: var(--main-clr);
+  font-size: 25px;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 100;0px 3px var(--main-clr)
+}
+
+nav ul {
+  --padding: 20px;
+  --font-size: 17px;
+
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size);
+  overflow: hidden;
+  transition: 1s cubic-bezier(.68,-0.55,.27,10.55);
+  box-shadow: var(--nav-shadow);
+}
+
+nav ul li {
+  padding: var(--padding);
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 1.7px;
+  border-radius: 99px;
+  background: var(--main-clr);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .menu {
+  width: 22px;
+  height: 16px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  margin: 20px;
+}
+
+nav .menu span {
+  width: 100%;
+  height: 2px;
+  border-radius: 99px;
+  background: #fff;
+  transition: 0.3s ease;
+  transform-origin: left;
+}
+
+nav .menu.active span {
+  background: var(--main-clr);
+}
+
+nav .menu.active span:nth-child(1) {
+  transform: rotate(40deg);
+}
+
+nav .menu span:nth-child(3) {
+  transform-origin: left;
+}
+
+nav .menu.active span:nth-child(3) {
+  transform: rotate(-40deg);
+}
+
+nav .menu.active span:nth-child(2) {
+  transform: scale(0);
+}
+
+
+
+
+
+/* CSABout Us */
+h2 {
+  margin-top: 55px;
+}
+
+p {
+  padding: 10px;
+  margin: 20px;
+}
+
+
+
+
+
+/* Media query ini untuk mengatur pada bagian navbar ketika lebar layar maksimum adalah 910 piksel.  */
+@media (max-width: 910px) {
+  nav .menu {
+    display: flex;
+  }
+
+  nav ul {
+    --height: 0px;
+
+    flex-direction: column;
+    background: var(--nav-bg);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 56px;
+    height: var(--height);
+    transition: 1s cubic-bezier(.68,-0.55,.27,1.55); /* Menambahkan transisi yang halus untuk perubahan tinggi dengan durasi 1 detik menggunakan fungsi cubic-bezier untuk efek transisi kustom. */
+  }
+  nav ul.active {
+    --height: calc(
+      (((var(--padding) * 2) + (var(--font-size) * 1.5))) * var(--childenNumber)
+    );
+    /* Fungsi calc untuk melakukan perhitungan aritmatika yang akan menghasilkan nilai yang diberikan ke --height. */
+    /* Menambahkan hasil perhitungan padding dan tinggi teks. */
+
+     transition: 1s ease;  /* Fungsi Transisi durasi 1 detiks */
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+  nav ul li a {
+    width: 100%;
+    text-transform: capitalize;
+  }
+}
+
+  
+  
+  section {
+    padding: 20px;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: ;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 70px;
+  }
+
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 100%;
+    margin-top: 30px;
+  }
+  
+  .box {
+    width: 200px;
+    height: auto;
+    background-color: #3498db;
+    border-radius: 7px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+    color: black;
+  }
+  
+  .box-two {
+    background-color: white;
+    width: 100px;
+    height: 600px;
+  }
+  
+  .sales-text {
+    color: #463E3F;
+  }
+  
+  .sales-number {
+    color: black;
+    font-size: 20px;
+  }
+  
+  .container-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* jarak antar cardnya */
+    margin-top: 20px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 340px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 32px;
+    background-color: lightgray;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    width: calc(20% - 20px);
+  }
+  
+  .card-header {
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #3498db;
+    border-radius: 7px;
+    background-color: #3498db;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  option {
+    padding: 5px;
+  }
+  
+  .container-home {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 4px;
+  }
+  
+
+
+
+  /* Bagian Footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    height: auto;
+  }
