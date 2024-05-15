@@ -1,24 +1,20 @@
-// For toggling and finding number of children and other stuff is done here!
+// Js untuk Navbar
+const navigation = document.getElementById("nav"); // untuk mendapatkan elemen HTML dengan id="nav" dan tersimpan ke dalam variabel Navigation
+const menu = document.getElementById("menu"); // // untuk mendapatkan elemen HTML dengan id="menu" dan tersimpan ke dalam variabel Menu
 
-const navigation = document.getElementById("nav");
-const menu = document.getElementById("menu");
-
-menu.addEventListener("click", () => {
-  // The navigation.children.length means the following :-
-  // The children inside a parent are basically an array of elements; So, here I'm finding the length of the array aka how many children are inside the nav bar.
-  //   Yup That's all.
+menu.addEventListener("click", () => { // event listener itu untuk mendeteksi klik pada elemen 'menu'. dan ketik di klik maka akan dijalankan
+  
   navigation.style.setProperty("--childenNumber", navigation.children.length);
+  // untuk Mengatur sebuah variabel CSS --childenNumber dengan jumlah anak dari elemen navigation. seperti <li> dalam <ul>.
 
-  //   Casually Toggling Classes to make them animate on click
-  //   Regular stuff ;)
-  navigation.classList.toggle("active");
-  menu.classList.toggle("active");
+  navigation.classList.toggle("active");  // untuk menambahkan/menghapus kelas 'active' pada elemen 'navigation'
+  menu.classList.toggle("active"); // untuk menambahkan/mengapus kelas 'active' pada elemen 'menu' dan 'navigation'
 });
 
 // Js untuk Bulan
 const ctxBulan = document.getElementById("myChartBulan").getContext("2d");
 new Chart(ctxBulan, {
-  type: "line", // tipe chart
+  type: "line", // untuk menentukan tipe grafik
   data: {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
@@ -39,19 +35,20 @@ new Chart(ctxBulan, {
   },
 });
 
+
 // Js untuk Tahun
 // ctx adalah sebuah variabel. itu nanti akan digunakan untuk menggambar grafik menggunakan Chart.js.
 // document.getElementById('myChart'); untuk memanggil nama id yang ada di tag canvas
-const ctx = document.getElementById("myChart");
+const ctx = document.getElementById("myChart"); 
 
 new Chart(ctx, {
-  type: "bar",
+  type: "bar", // untuk menentukan tipe grafik
   data: {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [
+    datasets: [ 
       {
         label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
+        data: [12, 19, 3, 5, 2, 3], // untuk menentukan data
         borderWidth: 1,
       },
     ],
@@ -59,7 +56,7 @@ new Chart(ctx, {
   options: {
     scales: {
       y: {
-        beginAtZero: true,
+        beginAtZero: true, 
       },
     },
   },
@@ -69,7 +66,7 @@ new Chart(ctx, {
 const ctxr = document.getElementById("myChartState");
 
 new Chart(ctxr, {
-  type: "scatter",
+  type: "scatter", // untuk menentukan tipe grafik
   data: {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
     datasets: [
