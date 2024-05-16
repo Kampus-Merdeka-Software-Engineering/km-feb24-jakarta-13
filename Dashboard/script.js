@@ -3,7 +3,7 @@ const navigation = document.getElementById("nav"); // untuk mendapatkan elemen H
 const menu = document.getElementById("menu"); // // untuk mendapatkan elemen HTML dengan id="menu" dan tersimpan ke dalam variabel Menu
 
 menu.addEventListener("click", () => { // event listener itu untuk mendeteksi klik pada elemen 'menu'. dan ketik di klik maka akan dijalankan
-  
+
   navigation.style.setProperty("--childenNumber", navigation.children.length);
   // untuk Mengatur sebuah variabel CSS --childenNumber dengan jumlah anak dari elemen navigation. seperti <li> dalam <ul>.
 
@@ -11,77 +11,85 @@ menu.addEventListener("click", () => { // event listener itu untuk mendeteksi kl
   menu.classList.toggle("active"); // untuk menambahkan/mengapus kelas 'active' pada elemen 'menu' dan 'navigation'
 });
 
-// Js untuk Bulan
-const ctxBulan = document.getElementById("myChartBulan").getContext("2d");
-new Chart(ctxBulan, {
-  type: "line", // untuk menentukan tipe grafik
+const ctx1 = document.getElementById('myChartBulan').getContext('2d');
+const lineChart = new Chart(ctx1, {
+  type: 'line',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-      {
-        label: "Total Sales",
-        data: [65, 59, 80, 81, 56, 55, 40],
-        borderColor: "rgb(75, 192, 192)",
-        borderWidth: 1,
-      },
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+      'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+      'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+      'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
     ],
+    datasets: [{
+      label: 'Total Sales Per Month',
+      data: [926929, 326370, 1911668, 1762336, 1537392, 1741447, 2027738, 1912360, 3303447, 1936858, 4900162, 3681679, 559404, 814060, 1644174, 2168021, 1831950, 1488433, 2007176, 2228368, 3876360, 2317750, 4720169, 4005348, 1009505, 1175077, 2457987, 1801930, 2380132, 2547478, 2644062, 2052894, 4466174, 2296695, 4437111, 5037568, 1828788, 1609476, 3273477,
+        2284067, 3157171, 3121578, 2998816, 2891349, 5067435, 3326550, 5982827, 5622997],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
   },
   options: {
     scales: {
       y: {
-        beginAtZero: true,
-      },
-    },
-  },
+        beginAtZero: true
+      }
+    }
+  }
 });
 
-
-// Js untuk Tahun
-// ctx adalah sebuah variabel. itu nanti akan digunakan untuk menggambar grafik menggunakan Chart.js.
-// document.getElementById('myChart'); untuk memanggil nama id yang ada di tag canvas
-const ctx = document.getElementById("myChart"); 
-
-new Chart(ctx, {
-  type: "bar", // untuk menentukan tipe grafik
+const ctx2 = document.getElementById('myChart').getContext('2d');
+const barChart = new Chart(ctx2, {
+  type: 'bar',
   data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [ 
-      {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3], // untuk menentukan data
-        borderWidth: 1,
-      },
+    labels: [2014, 2015, 2016, 2017
     ],
+    datasets: [{
+      label: 'Total Sales Per Years',
+      data: [25968386, 27661213, 32306613, 41164531],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
   },
   options: {
     scales: {
       y: {
-        beginAtZero: true, 
-      },
-    },
-  },
+        beginAtZero: true
+      }
+    }
+  }
 });
 
-// Js untuk State
-const ctxr = document.getElementById("myChartState");
 
-new Chart(ctxr, {
-  type: "scatter", // untuk menentukan tipe grafik
-  data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [
-      {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  },
-});
+
+
+

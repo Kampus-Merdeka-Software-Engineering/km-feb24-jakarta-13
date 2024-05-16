@@ -5,8 +5,10 @@
 } 
 
 * {
+  font-family: "Ubuntu", sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 
@@ -20,6 +22,7 @@ nav {
   width: 100%;
   background: #03000e; /* Untuk warna Navbar */
   box-shadow: var(--nav-shadow);
+  z-index: 1;
 }
 
 nav .logo {
@@ -185,28 +188,23 @@ p {
 
   
   .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    max-width: 100%;
-    margin-top: 30px;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
   }
   
-  .box {
-    width: 200px;
-    height: auto;
-    background-color: #3498db;
-    border-radius: 7px;
-    margin: 10px;
+  .container .box {
+    position: relative;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 5px;
-    font-size: 15px;
-    color: black;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   }
   
   .box-two {
@@ -223,6 +221,35 @@ p {
     color: black;
     font-size: 20px;
   }
+
+  .container .box .sales-number {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: black;
+}
+
+  .container .box .sales-text {
+    color: black;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+  .container .box .icon-card {
+    margin-left: 30px;
+    font-size: 3.5rem;
+    color: black;
+}
+
+  .container .box:hover {
+    background: black;
+}
+
+.container .box:hover .sales-text,
+.container .box:hover .sales-number,
+.container .box:hover .icon-card {
+    color: white;
+}
   
   .container-card {
     display: flex;
@@ -238,7 +265,7 @@ p {
     border: 1px solid #ccc;
     border-radius: 2px;
     padding: 32px;
-    background-color: lightgray;
+    background-color: #fff;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     width: calc(20% - 20px);
   }
@@ -248,6 +275,22 @@ p {
     padding-bottom: 5px;
     margin-bottom: 10px;
     text-align: center;
+  }
+
+  #chart-1 {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    height: 500px;
+    border-radius: 20px;
+    border: 1px solid black;
+  }
+
+  .labelstates{
+   margin-top: 50px;
+   position: relative;
+   text-align: center;
+   font-weight: bold;
   }
   
   select {
