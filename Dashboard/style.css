@@ -116,9 +116,7 @@ nav .menu.active span:nth-child(2) {
 
 
 
-
-
-/* CSABout Us */
+/* CSS ABout Us & Team */
 h2 {
   margin-top: 55px;
 }
@@ -168,6 +166,8 @@ p {
     width: 100%;
     text-transform: capitalize;
   }
+
+  
 }
 
   
@@ -178,7 +178,6 @@ p {
   
   body {
     font-family: Arial, sans-serif;
-    /* background-color: ; */
   }
   
   h1 {
@@ -192,8 +191,8 @@ p {
     width: 100%;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mengubah grid menjadi responsif */
+    gap: 20px;
   }
   
   .container .box {
@@ -225,19 +224,19 @@ p {
   .container .box .sales-number {
     position: relative;
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: black;
 }
 
   .container .box .sales-text {
     color: black;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 5px;
 }
 
   .container .box .icon-card {
     margin-left: 30px;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: black;
 }
 
@@ -261,15 +260,14 @@ p {
   }
   
   .card {
-    width: 340px;
+    width: 100%;
+    max-width: 300px; /* Mengatur lebar maksimum card */
     border: 1px solid #ccc;
-    border-radius: 2px;
+    border-radius: 7px;
     padding: 32px;
     background-color: #fff;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    width: calc(20% - 20px);
   }
-  
+
   .card-header {
     font-weight: bold;
     padding-bottom: 5px;
@@ -297,7 +295,7 @@ p {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
-    border: 1px solid #3498db;
+    border: 1px solid #ccc;
     border-radius: 7px;
     background-color: #3498db;
     font-size: 16px;
@@ -314,6 +312,76 @@ p {
     margin: 0 auto;
     padding: 0 4px;
   }
+
+
+  /* CSS Bagian About Us */
+  #AboutUs {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  #AboutUs article {
+      max-width: 1000px; /* Mengatur lebar maksimal teks */
+      width: 100%; /* Memastikan teks mengambil 100% lebar dari elemen induk */
+      text-align: justify; /* Meratakan teks */
+  }
+
+  #AboutUs h2 {
+      text-align: center; /* Mengatur perataan teks judul */
+  }
+
+  #AboutUs p {
+      line-height: 1.6; /* Mengatur tinggi baris untuk kenyamanan membaca */
+      margin-bottom: 2px; /* Memberi jarak antar paragraf */
+  }
+
+
+  /* CSS Bagian Team */
+  .team-content {
+    width: 90%;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.team-content img {
+    width: 40%;
+    height: auto;
+    border-radius: 150px;
+    margin-bottom: 15px;
+}
+
+.box-team{
+    padding: 16px;
+    background: #075AA1;
+    border-radius: 15px;
+    transition: all .38s ease;
+}
+
+.box-team h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: #EEF0F2;
+    margin-bottom: 8px;
+}
+
+.box-team h5{
+    font-size: 12px;
+    font-weight: 300;
+    color: #EEF0F2;
+    margin-bottom: 8px;
+}
+
+.box-team:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
   
 
 
