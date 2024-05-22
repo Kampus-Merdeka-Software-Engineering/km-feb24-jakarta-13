@@ -1,7 +1,8 @@
 # SUPERSTORE - TEAM 13 JAKARTA
+
+### Contributor
 |  |  |  |
 |--|--|--|
-### Contributor
 |**No**| **Nama** | **Role** |
 | 1 | Randi Praditiya | Project Leader |
 | 2 | Rizka Magvira | Software Engineering |
