@@ -115,3 +115,4 @@ polygonSeries.events.on("datavalidated", function () {
     heatLegend.set("startValue", polygonSeries.getPrivate("valueLow"));
     heatLegend.set("endValue", polygonSeries.getPrivate("valueHigh"));
 });
+

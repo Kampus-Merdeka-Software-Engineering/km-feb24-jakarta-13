@@ -11,7 +11,13 @@ menu.addEventListener("click", () => { // event listener itu untuk mendeteksi kl
   menu.classList.toggle("active"); // untuk menambahkan/mengapus kelas 'active' pada elemen 'menu' dan 'navigation'
 });
 
-const ctx1 = document.getElementById('myChartBulan').getContext('2d');
+//fungsi fly
+const goToTop = () => {
+  return location.href = "#Home"
+}
+
+//Sales Perbulan
+const ctx1 = document.getElementById('chart-2').getContext('2d');
 const lineChart = new Chart(ctx1, {
   type: 'line',
   data: {
@@ -52,7 +58,8 @@ const lineChart = new Chart(ctx1, {
   }
 });
 
-const ctx2 = document.getElementById('myChart').getContext('2d');
+//Sales Pertahun 
+const ctx2 = document.getElementById('chart-3').getContext('2d');
 const barChart = new Chart(ctx2, {
   type: 'bar',
   data: {
@@ -89,7 +96,211 @@ const barChart = new Chart(ctx2, {
   }
 });
 
+//Profitabilitas Penjualan
+const ctx3 = document.getElementById('chart-4').getContext('2d');
+const linechart2 = new Chart(ctx3, {
+  type: 'line',
+  data: {
+    labels: [2014, 2015, 2016, 2017
+    ],
+    datasets: [{
+      label: '',
+      data: [0.09, 0.12, 0.10, 0.11],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
 
+//Total Sales Per-Category
+const ctx4 = document.getElementById('chart-5').getContext('2d');
+const doughnutbar = new Chart(ctx4, {
+  type: 'doughnut',
+  data: {
+    labels: ['Technology', 'Furniture', 'Office Supplies'
+    ],
+    datasets: [{
+      label: 'Total Sales Per Years',
+      data: [37097641, 45045015, 44958087],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+});
 
+//Total Sales Per-Shipmode
+const ctx5 = document.getElementById('chart-6').getContext('2d');
+const piebar = new Chart(ctx5, {
+  type: 'pie',
+  data: {
+    labels: ['First Class', 'Second Class', 'Standard Class', 'Same Day'
+    ],
+    datasets: [{
+      label: 'Total Sales Per Years',
+      data: [19252666, 25489491, 75883132, 6475454],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+});
 
+//Sales Per-SubCategory 
+const ctx6 = document.getElementById('chart-7').getContext('2d');
+const barChart2 = new Chart(ctx6, {
+  type: 'bar',
+  data: {
+    labels: ['Phones', 'Chairs', 'Storage', 'Accessories', 'Tables', 'Furnishings', 'Binders', 'Paper', 'Appliances', 'Bookcases', 'Machines', 'Art', 'Copiers', 'Envelopes', 'Supplies', 'Labels', 'Fasteners'
+    ],
+    datasets: [{
+      label: 'Total Sales Per-SubCategory ',
+      data: [20350228, 19890127, 15134121, 11839826, 10484065, 8509469, 8290025, 7847924, 6617569, 6161354, 2721648, 2600578, 2185939, 1647638, 1269177, 1248630, 302425],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
 
+//Total Sales Per-Segment
+const ctx7 = document.getElementById('chart-8').getContext('2d');
+const doughnutbar2 = new Chart(ctx7, {
+  type: 'doughnut',
+  data: {
+    labels: ['Corporate', 'Home Office', 'Consumer'
+    ],
+    datasets: [{
+      label: 'Total Sales Per Years',
+      data: [38846921, 22751065, 65502757],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+});
+
+//5 Customers dengan pembelian tertinggi
+const ctx8 = document.getElementById('chart-9').getContext('2d');
+const barChart3 = new Chart(ctx8, {
+  type: 'bar',
+  data: {
+    labels: ['Dan Reichenbach', 'William Brown', 'Laura Armstrong', 'Cassandra Brandow', 'Maria Etezadi'
+    ],
+    datasets: [{
+      label: '',
+      data: [652803, 616010, 516833, 507672, 506598],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
