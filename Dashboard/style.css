@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 
@@ -188,7 +189,8 @@ p {
   
   .container {
     position: relative;
-    width: 100%;
+    width: 68%;
+    margin-left: 300px;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mengubah grid menjadi responsif */
@@ -261,7 +263,7 @@ p {
   
   .card {
     width: 100%;
-    max-width: 300px; /* Mengatur lebar maksimum card */
+    max-width: 800px; /* Mengatur lebar maksimum card */
     border: 1px solid #ccc;
     border-radius: 7px;
     padding: 32px;
@@ -278,6 +280,8 @@ p {
   #chart-1 {
     position: relative;
     margin-top: 20px;
+    width: 68%;
+    margin-left: 300px;
     margin-bottom: 100px;
     height: 500px;
     border-radius: 20px;
@@ -383,7 +387,19 @@ p {
     cursor: pointer;
 }
   
-
+.fly {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 5em;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 75px;
+  height: 75px;
+  border-radius: 15px;
+}
 
 
   /* Bagian Footer */
