@@ -304,3 +304,19 @@ const barChart3 = new Chart(ctx8, {
     }
   }
 });
+
+
+document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const feedback = document.getElementById('feedback').value;
+
+  if (name && email && feedback) {
+
+    document.getElementById('confirmation').style.display = 'block';
+
+    document.getElementById('feedbackForm').reset();
+  }
+});
