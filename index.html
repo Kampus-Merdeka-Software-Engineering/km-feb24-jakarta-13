@@ -1,336 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./Dashboard/style.css" />
-    
-    <title>Superstore 13-JKT</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="./Dashboard/style.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<title>Superstore 13-JKT</title>
 
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+			rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
+		<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+		<script src="./script.js"></script>
+	</head>
+	<body>
+		<!-- Bagian Header -->
+		<header>
+			<!-- Bagian Navbar -->
+			<nav>
+				<div>
+					<a
+						href="index.html"
+						class="logo"
+						>Superstore13-jkt</a
+					>
+				</div>
+				<div>
+					<ul id="nav">
+						<li><a href="#Home">Home</a></li>
+						<li><a href="#Dashboard">Dashboard</a></li>
+						<li><a href="#AboutUs">About Us</a></li>
+						<li><a href="#Team">Team</a></li>
+					</ul>
+				</div>
+				<div
+					class="menu"
+					id="menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</nav>
+			<section id="Home">
+				<h1>HEADER BELOM ! (Kanan Gambar Animasi, Kiri Ket)</h1>
+			</section>
+		</header>
 
-  </head>
-  <body>
+		<!-- Bagian Dashboard - Section -->
+		<main>
+			<section id="Dashboard">
+				<h1>Dashboard Superstore 13 - Jakarta</h1>
+				<br />
 
-    <!-- Bagian Header -->
-    <header>
-      <!-- Bagian Navbar -->
-      <nav>
-        <div>
-          <a href="index.html" class="logo">Superstore13-jkt</a>
-        </div>
-        <div>
-          <ul id="nav">
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#Dashboard">Dashboard</a></li>
-            <li><a href="#AboutUs">About Us</a></li>
-            <li><a href="#Feedback">Feedback</a></li>
-            <li><a href="#Team">Team</a></li>
-          </ul>
-        </div>
-        <div class="menu" id="menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-      <section id="Home">
-        <h1>HEADER BELOM ! (Kanan Gambar Animasi, Kiri Ket)</h1>
-      </section>
-    </header>
+				<div class="container">
+					<div class="box">
+						<div>
+							<div class="sales-number">127.100.743</div>
+							<div class="sales-text">Total Sales</div>
+						</div>
+						<div class="icon-card">
+							<ion-icon name="cash-outline"></ion-icon>
+						</div>
+					</div>
 
-    <!-- Bagian Dashboard - Section -->
-    <main>
-    <section id="Dashboard">
-      <h1>Dashboard Superstore 13 - Jakarta</h1>
-      <br />
+					<div class="box">
+						<div>
+							<div class="sales-number">13.455.261</div>
+							<div class="sales-text">Total Profit</div>
+						</div>
+						<div class="icon-card">
+							<ion-icon name="trending-up-outline"></ion-icon>
+						</div>
+					</div>
 
-      <div class="container">
-        <div class="box">
-          <div>
-          <div class="sales-number">127.100.743</div>
-          <div class="sales-text">Total Sales</div>
-          </div>
-          <div class="icon-card">
-            <ion-icon name="cash-outline"></ion-icon>
-        </div>
-      </div>
+					<div class="box">
+						<div>
+							<div class="sales-number">1.813</div>
+							<div class="sales-text">Total Product</div>
+						</div>
+						<div class="icon-card">
+							<ion-icon name="cart-outline"></ion-icon>
+						</div>
+					</div>
 
-        
-        <div class="box">
-          <div>
-          <div class="sales-number">13.455.261</div>
-          <div class="sales-text">Total Profit</div>
-        </div>
-        <div class="icon-card">
-          <ion-icon name="trending-up-outline"></ion-icon>
-      </div>
-      </div>
-      
+					<div class="box">
+						<div>
+							<div class="sales-number">793</div>
+							<div class="sales-text">Total Customer</div>
+						</div>
+						<div class="icon-card">
+							<ion-icon name="people-circle-outline"></ion-icon>
+						</div>
+					</div>
+				</div>
 
-        <div class="box">
-          <div>
-          <div class="sales-number">1.813</div>
-          <div class="sales-text">Total Product</div>
-        </div>
-        <div class="icon-card">
-          <ion-icon name="cart-outline"></ion-icon>
-      </div>
-      </div>
+				<div class="labelstates">Total Sales Per States</div>
+				<div id="chart-1"></div>
+				<!--untuk menambahkan konten didalamnya untuk memanipulasi elemen ini melalui kode CSS atau JavaScript.  -->
 
-        <div class="box">
-          <div>
-          <div class="sales-number">793</div>
-          <div class="sales-text">Total Customer</div>
-        </div>
-        <div class="icon-card">
-          <ion-icon name="people-circle-outline"></ion-icon>
-      </div>
-      </div>
-    </div>
-      </div>
+				<div class="container-card">
+					<div class="card">
+						<div class="card-header"></div>
+						<!-- Membuat Fitur Dropdown -->
+						<select>
+							<option value="orderdate1">Order Date (Tahun)</option>
+							<option value="orderdate2">2017</option>
+							<option value="orderdate3">2018</option>
+						</select>
+						<select>
+							<option value="category1">Category</option>
+							<option value="category2">Option 2</option>
+							<option value="category3">Option 3</option>
+						</select>
+						<select>
+							<option value="state1">State</option>
+							<option value="state2">Option 2</option>
+							<option value="state3">Option 3</option>
+						</select>
+					</div>
 
-      <div class="labelstates">Total Sales Per States</div>
-       <div id="chart-1"></div> <!--untuk menambahkan konten didalamnya untuk memanipulasi elemen ini melalui kode CSS atau JavaScript.  -->
+					<div class="card">
+						<div class="card-header">Total Sales Per Bulan</div>
+						<div>
+							<canvas id="chart-2"></canvas>
+						</div>
+					</div>
 
-      <div class="container-card">
-        <div class="card">
-          <div class="card-header"></div>
-          <!-- Membuat Fitur Dropdown -->
-          <select>
-            <option value="orderdate1">Order Date (Tahun)</option>
-            <option value="orderdate2">2017</option>
-            <option value="orderdate3">2018</option>
-          </select>
-          <select>
-            <option value="category1">Category</option>
-            <option value="category2">Option 2</option>
-            <option value="category3">Option 3</option>
-          </select>
-          <select>
-            <option value="state1">State</option>
-            <option value="state2">Option 2</option>
-            <option value="state3">Option 3</option>
-          </select>
-        </div>
+					<div class="card">
+						<div class="card-header">Total Sales Per Tahun</div>
+						<div>
+							<canvas id="chart-3"></canvas>
+						</div>
+					</div>
 
-        <div class="card">
-          <div class="card-header">Total Sales Per Bulan</div>
-          <div>
-            <canvas id="chart-2"></canvas>
-          </div>
-        </div>
+					<div class="card">
+						<div class="card-header">Profitabilitas Penjualan</div>
+						<div>
+							<canvas id="chart-4"></canvas>
+						</div>
+					</div>
 
-        <div class="card">
-          <div class="card-header">Total Sales Per Tahun</div>
-          <div>
-            <canvas id="chart-3"></canvas>
-          </div>
-        </div>
+					<div class="card">
+						<div class="card-header">Total Sales Category</div>
+						<div>
+							<canvas id="chart-5"></canvas>
+						</div>
+					</div>
 
-        <div class="card">
-          <div class="card-header">Profitabilitas Penjualan</div>
-          <div>
-            <canvas id="chart-4"></canvas>
-          </div>
-        </div>
+					<div class="card">
+						<div class="card-header">Total Sales Per Ship Mode</div>
+						<div>
+							<canvas id="chart-6"></canvas>
+						</div>
+					</div>
 
-        <div class="card">
-          <div class="card-header">Total Sales Category</div>
-          <div>
-            <canvas id="chart-5"></canvas>
-          </div>
-        </div>
+					<div class="card">
+						<div class="card-header">Total Sales Per Sub-Category</div>
+						<div>
+							<canvas id="chart-7"></canvas>
+						</div>
+					</div>
 
-        <div class="card">
-          <div class="card-header">Total Sales Per Ship Mode</div>
-          <div>
-            <canvas id="chart-6"></canvas>
-          </div>
-        </div>
+					<div class="card">
+						<div class="card-header">Total Sales Per Segment</div>
+						<div>
+							<canvas id="chart-8"></canvas>
+						</div>
+					</div>
 
-        <div class="card">
-          <div class="card-header">Total Sales Per Sub-Category</div>
-          <div>
-            <canvas id="chart-7"></canvas>
-          </div>
-        </div>
+					<div class="card">
+						<div class="card-header">5 Customer dengan pembelian tertinggi</div>
+						<div>
+							<canvas id="chart-9"></canvas>
+						</div>
+					</div>
+				</div>
+			</section>
 
-        <div class="card">
-          <div class="card-header">Total Sales Per Segment</div>
-          <div>
-            <canvas id="chart-8"></canvas>
-          </div>
-        </div>
+			<!-- Bagian About Us = Terdapat tag <main>, <article> & <section> -->
+			<section id="AboutUs">
+				<article>
+					<div class="AboutUs">
+						<div class="AboutUs-container">
+							<br />
+							<h2 style="text-align: center">About Us</h2>
+							<p>
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, minus ipsam beatae molestias iusto veritatis? Dolor laudantium et expedita ipsum natus. Qui omnis fugiat temporibus
+								unde quidem ab facere maiores. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, eveniet accusamus. Voluptatibus doloremque ea vel facere soluta qui, magni iure nihil!
+								Necessitatibus quia aliquam aspernatur, repellendus quaerat mollitia. Fugiat, dicta? consectetur adipisicing elit. Illo, eveniet adipisicing elit, aspernatur. ea vel facere soluta qui,
+								magni iure nihil! Necessitatibus quia aliquam aspernatur, repellendus quaerat mollitia. Fugiat, dicta? consectetur adipisicing elit. Illo, eveniet adipisicing elit, aspernatur.
+							</p>
+							<p>
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, minus ipsam beatae molestias iusto veritatis? Dolor laudantium et expedita ipsum natus. Qui omnis fugiat temporibus
+								unde quidem ab facere maiores. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, eveniet accusamus. Voluptatibus doloremque ea vel facere soluta qui, magni iure nihil!
+								Necessitatibus quia aliquam aspernatur, repellendus quaerat mollitia. Fugiat, dicta? consectetur adipisicing elit. Illo, eveniet adipisicing elit, aspernatur.
+							</p>
+						</div>
+					</div>
+				</article>
+			</section>
 
-        <div class="card">
-          <div class="card-header">5 Customer dengan pembelian tertinggi</div>
-          <div>
-            <canvas id="chart-9"></canvas>
-          </div>
-        </div>
+			
 
+			<!-- Bagian Team = Terdapat tag <main>, <article> & <section> -->
+			<section id="Team">
+				<article>
+					<br />
+					<h2 style="text-align: center">Our Team</h2>
+					<div class="team-content">
+						<!-- Isi konten di dalam "about" -->
 
-      </div>
-    </section>
+						<div class="box-team">
+							<img
+								src="women.jpeg"
+								alt="" />
+							<h3>Randi Praditiya</h3>
+							<h5>PIC : Project Leader</h5>
+							<h5>Universitas</h5>
+						</div>
 
+						<div class="box-team">
+							<img
+								src="women.jpeg"
+								alt="" />
+							<h3>Rizka Magvira</h3>
+							<h5>PIC : Software Engineering</h5>
+							<h5>Universitas Islam Balitar</h5>
+						</div>
 
-    <!-- Bagian About Us = Terdapat tag <main>, <article> & <section> -->
-      <section id="AboutUs">
-        <article>
-          <div class="AboutUs">
-            <div class="AboutUs-container"><br>
-          <h2 style="text-align: center">About Us</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, minus ipsam beatae molestias iusto veritatis? 
-            Dolor laudantium et expedita ipsum natus. Qui omnis fugiat temporibus unde quidem ab facere maiores.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, eveniet accusamus. Voluptatibus doloremque 
-            ea vel facere soluta qui, magni iure nihil! Necessitatibus quia aliquam aspernatur, repellendus quaerat mollitia. Fugiat, 
-            dicta? consectetur adipisicing elit. Illo, eveniet adipisicing elit, aspernatur. ea vel facere soluta qui, magni 
-            iure nihil! Necessitatibus quia aliquam aspernatur, repellendus quaerat mollitia. Fugiat, 
-            dicta? consectetur adipisicing elit. Illo, eveniet adipisicing elit, aspernatur.
-          </p>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, minus ipsam beatae molestias iusto veritatis? 
-            Dolor laudantium et expedita ipsum natus. Qui omnis fugiat temporibus unde quidem ab facere maiores.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, eveniet accusamus. Voluptatibus doloremque 
-            ea vel facere soluta qui, magni iure nihil! Necessitatibus quia aliquam aspernatur, repellendus quaerat mollitia. Fugiat, 
-            dicta? consectetur adipisicing elit. Illo, eveniet adipisicing elit, aspernatur.</p>
-          </div>
-          </div>
-        </article>
-      </section>
+						<div class="box-team">
+							<img
+								src="women.jpeg"
+								alt="" />
+							<h3>Condro Pargianto</h3>
+							<h5>PIC : Software Engineering</h5>
+							<h5>Universitas</h5>
+						</div>
 
+						<div class="box-team">
+							<img
+								src="women.jpeg"
+								alt="" />
+							<h3>Hendrix Hendrawan</h3>
+							<h5>PIC : Software Engineering</h5>
+							<h5>Universitas</h5>
+						</div>
 
+						<div class="box-team">
+							<img
+								src="women.jpeg"
+								alt="" />
+							<h3>Putri Robi'atul A</h3>
+							<h5>PIC : Software Engineering</h5>
+							<h5>Universitas</h5>
+						</div>
 
-      <section id="Feedback">
-        <div class="feedback">
-          <div class="feedback-container">
-              <form action="feedbackForm">
-                  <h2 class="sm-view" style="text-align: center; margin-bottom: 20px; margin-top: 80px;">Your Feedback is Important For Us</h2><br>
-                  <label for="name">Your Name</label> 
-                  <input type="text" id="name" name="name" placeholder="Enter your name">
+						<div class="box-team">
+							<img
+								src="./img/topan.jpg"
+								alt="" />
+							<h3>Topan Saefulloh</h3>
+							<h5>PIC : Deployment Team</h5>
+							<h5>Universitas</h5>
+						</div>
 
-                  <label for="email">Email Address</label>
-                  <input type="email" id="email" name="email" placeholder="Enter your Email Address">
+						<div class="box-team">
+							<img
+								src="women.jpeg"
+								alt="" />
+							<h3>Bima Putra W</h3>
+							<h5>PIC : Pitch Deck Team</h5>
+							<h5>Universitas</h5>
+						</div>
 
-                  <label for="feedback">Feedback</label>
-                  <textarea type="text" id="feedback" name="feedback" rows="10" placeholder="Write Your Feedback"></textarea>
-                  <button type="submit">Kirim</button>
-              </form>
-            </div>
-          </div>
-        </div>
-    </section>
+						<div class="box-team">
+							<img
+								src="women.jpeg"
+								alt="" />
+							<h3>Aqilaah Carissa A</h3>
+							<h5>PIC : Quality Assurance</h5>
+							<h5>Universitas</h5>
+						</div>
 
+						<div class="box-team">
+							<img
+								src="women.jpeg"
+								alt="" />
+							<h3>Mudrika</h3>
+							<h5>PIC : Quality Assurance</h5>
+							<h5>Universitas</h5>
+						</div>
 
+						<div class="box-team">
+							<img
+								src="women.jpeg"
+								alt="" />
+							<h3>Riyana Aditya C</h3>
+							<h5>PIC : Quality Assurance</h5>
+							<h5>Universitas</h5>
+						</div>
+					</div>
+				</article>
+			</section>
+		</main>
 
-    <!-- Bagian Team = Terdapat tag <main>, <article> & <section> -->
-    <section id="Team">
-      <article>
-        <br />
-        <h2 style="text-align: center">Our Team</h2>
-        <div class="team-content">
-          <!-- Isi konten di dalam "about" -->
-          
-          <div class="box-team">
-              <img src="women.jpeg" alt="">
-              <h3>Randi Praditiya</h3>
-              <h5>PIC : Project Leader</h5>
-              <h5>Universitas </h5>
-          </div>
+		<div
+			class="fly"
+			onclick="goToTop()">
+			<ion-icon name="arrow-up-circle-outline"></ion-icon>
+		</div>
 
-          <div class="box-team">
-            <img src="women.jpeg" alt="">
-              <h3>Rizka Magvira</h3>
-              <h5>PIC : Software Engineering</h5>
-              <h5>Universitas Islam Balitar</h5>
-          </div>
+		<!-- Bagian Footer -->
+		<footer id="footer">
+			<p>&copy; 2024 Section Jakarta - Team 13 - All Rights Reserved.</p>
+		</footer>
 
-          <div class="box-team">
-            <img src="women.jpeg" alt="">
-              <h3>Condro Pargianto</h3>
-              <h5>PIC : Software Engineering</h5>
-              <h5>Universitas </h5>
-          </div>
+		<!-- tag script digunakan untuk menghubungkan file HTML dengan file JavaScript  -->
+		<script src="Dashboard/script.js"></script>
 
-          <div class="box-team">
-            <img src="women.jpeg" alt="">
-              <h3>Hendrix Hendrawan</h3>
-              <h5>PIC : Software Engineering</h5>
-              <h5>Universitas </h5>
-          </div>
+		<!-- CHARTS JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+		<script src="Dashboard/chart.js"></script>
 
-          <div class="box-team">
-            <img src="women.jpeg" alt="">
-              <h3>Putri Robi'atul A</h3>
-              <h5>PIC : Software Engineering</h5>
-              <h5>Universitas </h5>
-          </div>
-
-          <div class="box-team">
-            <img src="./img/topan.jpg" alt="">
-              <h3>Topan Saefulloh</h3>
-              <h5>PIC : Deployment Team</h5>
-              <h5>Universitas </h5>
-          </div>
-
-          <div class="box-team">
-            <img src="women.jpeg" alt="">
-              <h3>Bima Putra W</h3>
-              <h5>PIC : Pitch Deck Team</h5>
-              <h5>Universitas </h5>
-          </div>
-
-          <div class="box-team">
-            <img src="women.jpeg" alt="">
-              <h3>Aqilaah Carissa A</h3>
-              <h5>PIC : Quality Assurance</h5>
-              <h5>Universitas </h5>
-          </div>
-
-          <div class="box-team">
-            <img src="women.jpeg" alt="">
-              <h3>Mudrika</h3>
-              <h5>PIC : Quality Assurance</h5>
-              <h5>Universitas </h5>
-          </div>
-
-          <div class="box-team">
-            <img src="women.jpeg" alt="">
-              <h3>Riyana Aditya C</h3>
-              <h5>PIC : Quality Assurance</h5>
-              <h5>Universitas </h5>
-          </div>
-        </div>
-      </article>
-    </section>
-  </main>
-    
-  <div class="fly" onclick="goToTop()"><ion-icon name="arrow-up-circle-outline"></ion-icon></div>
-
-    <!-- Bagian Footer -->
-    <footer id="footer">
-      <p>&copy; 2024 Section Jakarta - Team 13 - All Rights Reserved.</p>
-    </footer>
-
-    <!-- tag script digunakan untuk menghubungkan file HTML dengan file JavaScript  -->
-    <script src="Dashboard/script.js"></script>
-  </body>
-
-      <!-- CHARTS JS -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-      <script src="Dashboard/chart.js"></script>
-
-  <!-- IONICONS -->
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+		<!-- IONICONS -->
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	</body>
 </html>
