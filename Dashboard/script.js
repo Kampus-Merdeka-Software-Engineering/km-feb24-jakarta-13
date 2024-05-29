@@ -12,10 +12,16 @@ menu.addEventListener('click', () => {
 	menu.classList.toggle('active'); // untuk menambahkan/mengapus kelas 'active' pada elemen 'menu' dan 'navigation'
 });
 
+
+
+
+
 //fungsi fly
 const goToTop = () => {
 	return (location.href = '#Home');
 };
+
+
 
 //Sales Perbulan
 const ctx1 = document.getElementById('chart-2').getContext('2d');

@@ -2,12 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0" />
-		<link
-			rel="stylesheet"
-			href="./Dashboard/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link  rel="stylesheet" href="./Dashboard/style.css" />
 
 		<title>Superstore 13-JKT</title>
 
@@ -30,10 +26,7 @@
 			<!-- Bagian Navbar -->
 			<nav>
 				<div>
-					<a
-						href="index.html"
-						class="logo"
-						>Superstore13-jkt</a
+					<a href="index.html" class="logo">Superstore13-jkt</a
 					>
 				</div>
 				<div>
@@ -53,10 +46,21 @@
 				</div>
 			</nav>
 			<section id="Home">
-				<div class="home container_home">
-					<h1 style="font-size: 50px;">Superstore-13 Analytics Home</h1><br>
-					<h2>Unlocking Profit Potential Through Data Analytics!</h2>
-					<button class="custom-button"> Klik Saya </button>
+				<div class="container">
+					<div class="animasi">
+						<img src="data-analysis.png" alt="Deskripsi Gambar">
+					</div>
+		
+					<div class="keterangan">
+						<h1>Welcome to Project Team 13 with RevoU Tech Academy Learn Data Analytics & Software Development with AI</h1>
+						
+						<p> Superstore13-jkt Analytics is a specialised analytics platform dedicated 
+						  to providing comprehensive information on the sales profitability of superstores.
+						  We provide deep insights into the financial performance of superstores, with a clear
+						  emphasis on the profitability aspect. 
+						</p>
+						<button onclick="scrollToAboutUs()"> Read More </button>
+					</div>
 				</div>
 			</section>
 		</header>
@@ -113,24 +117,31 @@
 				<div id="chart-1"></div>
 				<!--untuk menambahkan konten didalamnya untuk memanipulasi elemen ini melalui kode CSS atau JavaScript.  -->
 
-				<div class="container-card">
-					<div class="card">
-						<div class="card-header"></div>
-						<!-- Membuat Fitur Dropdown -->
-						<select>
-							<option value="orderdate1">Order Date (Tahun)</option>
-							<option value="orderdate2">All Order Date</option>
-						</select>
-						<select>
-							<option value="category1">Category</option>
-							<option value="category2">All Category</option>
-						</select>
-						<select>
-							<option value="state1">State</option>
-							<option value="state2">All State</option>
-						</select>
-					</div>
 
+				<div class="dropdown">
+					<select>
+						<option value="orderdate1">Order Date (Tahun)</option>
+						<option value="orderdate2">2017</option>
+						<option value="orderdate3">2016</option>
+						<option value="orderdate4">2015</option>
+						<option value="orderdate5">2014</option>
+					</select>
+					<select>
+						<option value="category1">Category</option>
+						<option value="category2">Furniture</option>
+						<option value="category3">Office Supplies</option>
+						<option value="category4">Technology</option>
+					</select>
+					<select>
+						<option value="state1">State</option>
+						<option value="state2">Central</option>
+						<option value="state3">East</option>
+						<option value="state4">South</option>
+						<option value="state5">West</option>
+					</select>
+				</div>
+
+				<div class="container-card">
 					<div class="card">
 						<div class="card-header">Total Sales Per Month</div>
 						<div>
