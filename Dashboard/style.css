@@ -47,7 +47,7 @@ nav .logo {
   font-size: 25px;
   font-family: "Playfair Display", serif;
   font-style: italic;
-  font-weight: 100;0px 3px var(--main-clr)
+  font-weight: 100px 3px var(--main-clr);
 }
 
 nav ul {
