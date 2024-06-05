@@ -1,167 +1,164 @@
+/* Variabel kustom untuk warna latar belakang navbar, warna utama, dan bayangan navbar */
 :root {
-  --nav-bg: #03000e; 
-  --main-clr: dodgerblue;
-  --nav-shadow: 0px 3px var(--main-clr); 
-} 
+  --nav-bg: #03000e; /* Warna latar belakang navbar */
+  --main-clr: dodgerblue; /* Warna utama */
+  --nav-shadow: 0px 3px var(--main-clr); /* Bayangan navbar */
+}
+
+/* Reset CSS */
 * {
-  font-family: "Ubuntu", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-} 
+  font-family: "Ubuntu", sans-serif; /* Mengatur font default untuk seluruh elemen */
+  margin: 0; /* Menghilangkan margin */
+  padding: 0; /* Menghilangkan padding */
+  box-sizing: border-box; /* Membuat box-sizing menjadi border-box untuk menghitung border dan padding ke dalam ukuran total elemen */
+  scroll-behavior: smooth; /* Mengatur perilaku smooth scrolling */
+}
 
+/* Gaya umum untuk setiap bagian (section) */
 section {
-    padding: 20px;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #98AFC7;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-top: 70px;
-  }
+  padding: 20px; /* Memberikan padding 20px untuk setiap bagian */
+}
 
+/* Gaya umum untuk body */
+body {
+  font-family: Arial, sans-serif; /* Mengatur font untuk body */
+  background-color: #98AFC7; /* Memberikan warna latar belakang untuk body */
+}
 
+/* Gaya untuk heading level 1 */
+h1 {
+  text-align: center; /* Pusatkan teks */
+  margin-top: 70px; /* Atur margin atas */
+}
 
-
-
-/* CSS bagian Navbar */
+/* CSS untuk bagian Navbar */
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  position: fixed;
-  width: 100%;
-  background: #03000e; /* Untuk warna Navbar */
-  box-shadow: var(--nav-shadow);
-  z-index: 1;
+  display: flex; /* Membuat tata letak flexbox untuk menempatkan elemen-elemen navbar */
+  align-items: center; /* Menyamakan item navbar secara vertikal */
+  justify-content: space-around; /* Membagi ruang secara merata antara item navbar */
+  position: fixed; /* Membuat navbar tetap terlihat di atas saat digulir */
+  width: 100%; /* Lebar navbar mengambil lebar penuh dari tata letak */
+  background: #03000e; /* Warna latar belakang navbar */
+  box-shadow: var(--nav-shadow); /* Bayangan navbar menggunakan variabel kustom */
+  z-index: 1; /* Membuat navbar berada di atas konten lainnya */
 }
 
 nav .logo {
-  color: #fff; 
-  text-decoration-color: var(--main-clr);
-  font-size: 25px;
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-weight: 100px 3px var(--main-clr);
+  color: #fff; /* Warna teks logo */
+  text-decoration-color: var(--main-clr); /* Warna garis bawah pada tautan logo menggunakan variabel kustom */
+  font-size: 25px; /* Ukuran font logo */
+  font-family: "Playfair Display", serif; /* Font logo */
+  font-style: italic; /* Gaya huruf miring */
+  font-weight: 100px 3px var(--main-clr); /* Ketebalan font logo menggunakan variabel kustom */
 }
 
 nav ul {
-  --padding: 20px;
-  --font-size: 17px;
+  --padding: 20px; /* Variabel untuk padding */
+  --font-size: 17px; /* Variabel untuk ukuran font */
 
-  list-style: none;
-  display: flex;
-  align-items: center;
-  font-size: var(--font-size);
-  overflow: hidden;
-  transition: 1s cubic-bezier(.68,-0.55,.27,10.55);
-  box-shadow: var(--nav-shadow);
+  list-style: none; /* Menghapus bullet point dari daftar */
+  display: flex; /* Membuat tata letak flexbox untuk menu */
+  align-items: center; /* Menyamakan item menu secara vertikal */
+  font-size: var(--font-size); /* Menggunakan variabel untuk ukuran font */
+  overflow: hidden; /* Mengatur overflow menjadi tersembunyi */
+  transition: 1s cubic-bezier(.68,-0.55,.27,10.55); /* Transisi halus untuk menu */
+  box-shadow: var(--nav-shadow); /* Bayangan navbar menggunakan variabel kustom */
 }
 
 nav ul li {
-  padding: var(--padding);
+  padding: var(--padding); /* Menggunakan variabel untuk padding */
 }
 
 nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  position: relative;
+  color: #fff; /* Warna teks tautan */
+  text-decoration: none; /* Menghapus dekorasi tautan */
+  position: relative; /* Posisi relatif untuk konten tambahan */
 }
 
 nav ul li a::after {
-  content: "";
-  width: 0%;
-  height: 1.7px;
-  border-radius: 99px;
-  background: var(--main-clr);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: 0.3s ease;
+  content: ""; /* Menambahkan konten setelah tautan */
+  width: 0%; /* Lebar awal garis bawah */
+  height: 1.7px; /* Tinggi garis bawah */
+  border-radius: 99px; /* Membuat sudut sudut lembut */
+  background: var(--main-clr); /* Warna garis bawah menggunakan variabel kustom */
+  position: absolute; /* Posisi absolut terhadap elemen induk */
+  bottom: 0; /* Jarak dari bawah */
+  left: 0; /* Jarak dari kiri */
+  transition: 0.3s ease; /* Transisi halus */
 }
 
 nav ul li a:hover::after {
-  width: 100%;
+  width: 100%; /* Membuat garis bawah penuh lebar saat dihover */
 }
 
 nav .menu {
-  width: 22px;
-  height: 16px;
-  cursor: pointer;
-  display: none;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  margin: 20px;
+  width: 22px; /* Lebar ikon menu */
+  height: 16px; /* Tinggi ikon menu */
+  cursor: pointer; /* Kursor berubah menjadi tanda tangan saat diarahkan ke ikon */
+  display: none; /* Menyembunyikan ikon menu */
+  align-items: center; /* Menyamakan item menu secara vertikal */
+  flex-direction: column; /* Mengatur arah item menu menjadi vertikal */
+  justify-content: space-between; /* Menyusun item menu dengan jarak yang sama */
+  position: relative; /* Posisi relatif terhadap konten lainnya */
+  margin: 20px; /* Margin di sekitar ikon menu */
 }
 
 nav .menu span {
-  width: 100%;
-  height: 2px;
-  border-radius: 99px;
-  background: #fff;
-  transition: 0.3s ease;
-  transform-origin: left;
+  width: 100%; /* Lebar ikon garis menu */
+  height: 2px; /* Tinggi ikon garis menu */
+  border-radius: 99px; /* Membuat sudut lembut pada ikon garis */
+  background: #fff; /* Warna ikon garis */
+  transition: 0.3s ease; /* Transisi halus */
+  transform-origin: left; /* Mengatur titik transformasi menjadi kiri */
 }
 
 nav .menu.active span {
-  background: var(--main-clr);
+  background: var(--main-clr); /* Warna ikon garis saat aktif menggunakan variabel kustom */
 }
 
 nav .menu.active span:nth-child(1) {
-  transform: rotate(40deg);
+  transform: rotate(40deg); /* Merotasi ikon garis pertama */
 }
 
 nav .menu span:nth-child(3) {
-  transform-origin: left;
+  transform-origin: left; /* Mengatur titik transformasi menjadi kiri */
 }
 
 nav .menu.active span:nth-child(3) {
-  transform: rotate(-40deg);
+  transform: rotate(-40deg); /* Merotasi ikon garis ketiga */
 }
 
 nav .menu.active span:nth-child(2) {
-  transform: scale(0);
+  transform: scale(0); /* Mengubah ukuran ikon garis kedua menjadi 0 */
 }
 
 
-
-/* CSS ABout Us & Team */
+/* CSS untuk bagian About Us & Team */
 h2 {
-  margin-top: 55px;
+  margin-top: 55px; /* Jarak atas untuk judul h2 */
 }
 
 p {
-  padding: 10px;
-  margin: 20px;
+  padding: 10px; /* Padding di sekitar paragraf */
+  margin: 20px; /* Margin di sekitar paragraf */
 }
-
-
-
-
 
 /* Media query ini untuk mengatur pada bagian navbar ketika lebar layar maksimum adalah 910 piksel.  */
 @media (max-width: 910px) {
   nav .menu {
-    display: flex;
+    display: flex; /* Menampilkan ikon menu */
   }
 
   nav ul {
-    --height: 0px;
+    --height: 0px; /* Variabel untuk tinggi menu */
 
-    flex-direction: column;
-    background: var(--nav-bg);
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 56px;
-    height: var(--height);
+    flex-direction: column; /* Mengatur orientasi menu menjadi vertikal */
+    background: var(--nav-bg); /* Memberikan warna latar belakang pada menu */
+    position: absolute; /* Mengatur posisi absolut agar tetap berada di atas konten */
+    width: 100%; /* Lebar menu 100% dari layar */
+    left: 0; /* Mengatur posisi kiri menu */
+    top: 56px; /* Mengatur posisi atas menu */
+    height: var(--height); /* Mengatur tinggi menu */
     transition: 1s cubic-bezier(.68,-0.55,.27,1.55); /* Menambahkan transisi yang halus untuk perubahan tinggi dengan durasi 1 detik menggunakan fungsi cubic-bezier untuk efek transisi kustom. */
   }
   nav ul.active {
@@ -175,357 +172,388 @@ p {
   }
 
   nav ul li {
-    width: 100%;
-    text-align: center;
+    width: 100%; /* Mengatur lebar menu menjadi 100% */
+    text-align: center; /* Mengatur teks menu menjadi rata tengah */
   }
   nav ul li a {
-    width: 100%;
-    text-transform: capitalize;
+    width: 100%; /* Mengatur lebar tautan menu menjadi 100% */
+    text-transform: capitalize; /* Mengubah teks menu menjadi huruf kapital */
   }
   .container {
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column; /* Mengatur orientasi konten menjadi vertikal */
+    align-items: center; /* Mengatur konten agar berada di tengah */
 }
 
 .animasi img {
-    width: 100%; 
-    max-width: 500px; 
-    height: auto; 
-    margin-top: 0; 
+    width: 100%; /* Mengatur lebar gambar menjadi 100% */
+    max-width: 500px; /* Mengatur lebar maksimum gambar */
+    height: auto; /* Mengatur tinggi gambar secara otomatis */
+    margin-top: 0; /* Mengatur margin atas gambar */
 }
 
 .keterangan {
-    text-align: center; 
-    width: 80%; 
+    text-align: center; /* Mengatur teks menjadi rata tengah */
+    width: 80%; /* Mengatur lebar konten */
 }
 
 .keterangan h1 {
-    font-size: 24px; 
+    font-size: 24px; /* Mengatur ukuran teks judul */
 }
 
 .keterangan p {
-    font-size: 16px; 
-    margin: 20px 0; 
+    font-size: 16px; /* Mengatur ukuran teks paragraf */
+    margin: 20px 0; /* Mengatur margin paragraf */
 }
 
 .keterangan button {
-    font-size: 14px; 
-    padding: 8px 16px; 
-    margin-top: 20px; 
+    font-size: 14px; /* Mengatur ukuran teks tombol */
+    padding: 8px 16px; /* Mengatur padding tombol */
+    margin-top: 20px; /* Mengatur margin atas tombol */
 }
 }
-
-
-
 
 /* CSS home */
 .container { 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 15px; /* Mengatur jarak antar elemen dalam container */
 }
 
 .animasi {
-  width: 100%; 
+  width: 100%; /* Mengatur lebar animasi menjadi 100% */
 }
 
 .animasi img {
-  width: 90%; 
-  margin-top: -10px;
+  width: 90%; /* Mengatur lebar gambar animasi menjadi 90% */
+  margin-top: -10px; /* Mengatur margin atas gambar animasi */
 }
 
 .keterangan {
-  width: 80%; 
-  text-align: left;
-  margin-top: -5px;
+  width: 80%; /* Mengatur lebar keterangan menjadi 80% */
+  text-align: left; /* Mengatur teks keterangan menjadi rata kiri */
+  margin-top: -5px; /* Mengatur margin atas keterangan */
 }
+
 .keterangan h1 {
-  font-size: 30px;
+  font-size: 30px; /* Mengatur ukuran teks judul keterangan */
 }
 
 .keterangan p {
-  pading: 0;
-  margin: 0;
-  margin-top: 7px;
-  text-align: left;
+  padding: 0; /* Mengatur padding paragraf menjadi 0 */
+  margin: 0; /* Mengatur margin paragraf menjadi 0 */
+  margin-top: 7px; /* Mengatur margin atas paragraf */
+  text-align: left; /* Mengatur teks paragraf menjadi rata kiri */
 }
-
 
 /* CSS Button Home */
 .keterangan button {
-  margin-top: 10px;
-  background-color: #15317E;
-  color: white;
-  border: 2px solid #151B54;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Animasi perubahan warna */
-  width: 150px; /* Atur lebar tombol */
-  margin-left: 10px;
+  margin-top: 10px; /* Menentukan margin atas tombol */
+  background-color: #15317E; /* Warna latar belakang tombol */
+  color: white; /* Warna teks pada tombol */
+  border: 2px solid #151B54; /* Garis tepi tombol */
+  padding: 10px 20px; /* Padding tombol */
+  border-radius: 20px; /* Membuat sudut melengkung pada tombol */
+  font-size: 16px; /* Ukuran teks pada tombol */
+  cursor: pointer; /* Mengubah kursor menjadi tanda klik */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Animasi perubahan warna, teks, dan bayangan kotak tombol */
+  width: 150px; /* Lebar tombol */
+  margin-left: 10px; /* Margin kiri tombol */
 }
 
 .keterangan button:hover {
-  background-color: #151B54;
-  color: white;
-  box-shadow: 0 0 10px rgba(21, 27, 84, 0.5); /* Warna efek bayangan saat hover */
+  background-color: #151B54; /* Warna latar belakang saat tombol dihover */
+  color: white; /* Warna teks saat tombol dihover */
+  box-shadow: 0 0 10px rgba(21, 27, 84, 0.5); /* Efek bayangan saat tombol dihover */
 }
 
 .keterangan button:active {
-  background-color: blue;
-  color: white;
+  background-color: blue; /* Warna latar belakang saat tombol ditekan */
+  color: white; /* Warna teks saat tombol ditekan */
 }
 /* END CSS Home */
 
-
-
-
   
-  .container {
-    position: relative;
-    width: 100%;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mengubah grid menjadi responsif */
-    gap: 20px;
-  }
-  
-  .container .box {
-    position: relative;
-    background: #EBF4FA;
-    padding: 30px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-  }
-  
-  .box-two {
-    background-color: white;
-    width: 100px;
-    height: 600px;
-  }
-  
-  .sales-text {
-    color: #463E3F;
-  }
-  
-  .sales-number {
-    color: black;
-    font-size: 20px;
-  }
-
-  .container .box .sales-number {
-    position: relative;
-    font-weight: 500;
-    font-size: 2rem;
-    color: black;
+.container {
+  position: relative; /* Posisi relatif untuk child elements */
+  width: 100%; /* Lebar container 100% */
+  padding: 20px; /* Padding 20px */
+  display: grid; /* Menggunakan grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Menentukan jumlah dan lebar kolom grid, dengan lebar minimum 250px dan maksimum 1fr */
+  gap: 20px; /* Jarak antar grid items */
 }
 
-  .container .box .sales-text {
-    color: black;
-    font-size: 1rem;
-    margin-top: 5px;
+.container .box {
+  position: relative; /* Posisi relatif untuk child elements */
+  background: #EBF4FA; /* Warna latar belakang */
+  padding: 30px; /* Padding 30px */
+  border-radius: 20px; /* Sudut border */
+  display: flex; /* Menggunakan flexbox */
+  justify-content: space-between; /* Penataan flexbox dengan ruang seimbang */
+  cursor: pointer; /* Kursor pointer saat dihover */
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); /* Efek bayangan */
 }
 
-  .container .box .icon-card {
-    margin-left: 30px;
-    font-size: 2.5rem;
-    color: black;
+.box-two {
+  background-color: white; /* Warna latar belakang */
+  width: 100px; /* Lebar 100px */
+  height: 600px; /* Tinggi 600px */
 }
 
-  .container .box:hover {
-    background: #151B54;
+.sales-text {
+  color: #463E3F; /* Warna teks */
+}
+
+.sales-number {
+  color: black; /* Warna teks */
+  font-size: 20px; /* Ukuran font */
+}
+
+.container .box .sales-number {
+  position: relative; /* Posisi relatif */
+  font-weight: 500; /* Ketebalan font */
+  font-size: 2rem; /* Ukuran font */
+  color: black; /* Warna teks */
+}
+
+.container .box .sales-text {
+  color: black; /* Warna teks */
+  font-size: 1rem; /* Ukuran font */
+  margin-top: 5px; /* Margin atas */
+}
+
+.container .box .icon-card {
+  margin-left: 30px; /* Margin kiri */
+  font-size: 2.5rem; /* Ukuran font */
+  color: black; /* Warna teks */
+}
+
+.container .box:hover {
+  background: #151B54; /* Warna latar belakang saat dihover */
 }
 
 .container .box:hover .sales-text,
 .container .box:hover .sales-number,
 .container .box:hover .icon-card {
-    color: white;
+  color: white; /* Warna teks saat dihover */
 }
+
+/* CSS Dropdown */
+.drop-down {
+  display: flex; /* Menggunakan flexbox */
+  align-items: center; /* Menyusun elemen secara vertikal */
+  justify-content: center; /* Menyusun elemen secara horizontal */
+  gap: 8px; /* Jarak antara elemen */
+  width: 100%; /* Lebar penuh */
+  margin-bottom: 10px; /* Margin bawah */
+}
+
+select {
+  flex: 0 1 150px; /* Menentukan lebar dropdown */
+  padding: 10px; /* Padding */
+  margin: 0; /* Menghilangkan margin bawaan */
+  border: 2px solid #3498db; /* Border solid 2px biru */
+  border-radius: 7px; /* Border radius 7px */
+  background-color: white; /* Warna latar belakang putih */
+  font-size: 16px; /* Ukuran font */
+  cursor: pointer; /* Kursor pointer saat dihover */
+  box-sizing: border-box; /* Padding dan border termasuk dalam ukuran elemen */
+}
+
+option {
+  padding: 5px; /* Padding pada opsi dropdown */
+}
+/* End CSS Dropdown */
+
   
-  .container-card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px; /* jarak antar cardnya */
-    margin-top: 20px;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .card {
-    width: 80%;
-    max-width: 350px; /* Mengatur lebar maksimum card */
-    height: auto;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    padding: 32px;
-    background-color: #EBF4FA;
-  }
+/* CHART */
+#chart-1 {
+  margin-top: 20px; /* Margin atas */
+  margin-bottom: 100px; /* Margin bawah */
+  margin-left: auto; /* Margin kiri */
+  margin-right: auto; /* Margin kanan */
+  width: 90%; /* Lebar 90% */
+  max-width: 800px; /* Lebar maksimum 800px */
+  height: 400px; /* Tinggi 400px */
+  border-radius: 20px; /* Radius sudut 20px */
+  border: 1px solid black; /* Border solid hitam */
+}
 
-  .card-header {
-    font-weight: bold;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
+.labelstates {
+  margin-top: 50px; /* Margin atas */
+  position: relative; /* Posisi relatif */
+  text-align: center; /* Teks rata tengah */
+  font-weight: bold; /* Tebal */
+}
 
-  #chart-1 {
-    margin-top: 20px;
-    margin-bottom: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    max-width: 800px; 
-    height: 400px;
-    border-radius: 20px;
-    border: 1px solid black;
-  }
-  
+.swiper-slide {
+  display: flex; /* Menggunakan flexbox */
+  justify-content: center; /* Menyusun elemen ke tengah */
+  align-items: center; /* Menyusun elemen ke tengah */
+}
 
-  .labelstates{
-   margin-top: 50px;
-   position: relative;
-   text-align: center;
-   font-weight: bold;
-  }
+.container-card {
+  display: flex; /* Menggunakan flexbox */
+  overflow: hidden; /* Overflow tersembunyi */
+  text-align: center; /* Teks rata tengah */
+  justify-content: center; /* Menyusun elemen ke tengah */
+  gap: 5px; /* Jarak antara card */
+  width: 50%; /* Lebar 50% */
+  max-width: 1200px; /* Lebar maksimum 1200px */
+  margin: 0 auto; /* Margin secara otomatis */
+}
 
-  /* CSS Dropdwon */
-  .card.dropdown {
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-end;
-    gap: 10px; /* Menambahkan jarak antar dropdown */
-    width: 100%; /* Membuat card penuh sepanjang kontainer induknya */
-  }
+.card-chart {
+  width: 100%; /* Lebar penuh */
+  box-sizing: border-box; /* Padding dan border termasuk dalam ukuran elemen */
+  padding: 20px; /* Padding */
+  border: 1px solid #ccc; /* Border solid abu-abu */
+  border-radius: 8px; /* Radius sudut 8px */
+  background-color: #fff; /* Warna latar belakang putih */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Bayangan */
+}
 
-  select {
-    flex: 0 1 150px; /* Menentukan lebar setiap dropdown */
-    padding: 10px;
-    margin: 0; /* Menghilangkan margin bawaan */
-    border: 2px solid #3498db;
-    border-radius: 7px;
-    background-color: white;
-    font-size: 16px;
-    cursor: pointer;
-    box-sizing: border-box; /* Memastikan padding dan border termasuk dalam ukuran elemen */
-  }
+.card-chart .chart-5,
+.card-chart .chart-6,
+.card-chart .chart-8 {
+  display: flex; /* Menggunakan flexbox */
+  align-items: center; /* Menyusun elemen ke tengah */
+  justify-content: center; /* Menyusun elemen ke tengah */
+  height: 100%; /* Tinggi penuh */
+  width: 50%; /* Lebar 50% */
+  margin-left: 25%; /* Margin kiri 25% */
+}
 
-  option {
-    padding: 5px;
-  }
-  /* End CSS Dropdwon */
-  
+.card-header {
+  font-weight: bold; /* Teks tebal */
+  padding-bottom: 5px; /* Padding bawah */
+  margin-bottom: 10px; /* Margin bawah */
+  text-align: center; /* Teks rata tengah */
+}
+/* END CHART */
 
+ /* Data Table */
+.main-table {
+  background-color: white; /* Warna latar belakang putih */
+  width: 100%; /* Lebar 100% */
+  padding: 20px; /* Padding 20px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan kotak */
+  border-radius: 8px; /* Sudut bulatan */
+}
 
-  .container-home {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 4px;
-  }
+.main-table h1 {
+  text-align: center; /* Teks rata tengah */
+  margin-bottom: 10px; /* Margin bawah 10px */
+}
 
+table.dataTable {
+  width: 100%; /* Lebar 100% */
+  margin: 0 auto; /* Margin horizontal auto */
+  border-collapse: collapse; /* Gabungkan batas tabel */
+}
+
+table.dataTable thead th {
+  background-color: papayawhip; /* Warna latar belakang header */
+}
 
   /* CSS Bagian About Us */
-  #AboutUs {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-  }
+#AboutUs {
+  display: flex; /* Tampilkan sebagai fleks */
+  justify-content: center; /* Pusatkan konten horizontal */
+  padding: 20px; /* Padding 20px */
+}
 
-  #AboutUs article {
-      max-width: 1000px; /* Mengatur lebar maksimal teks */
-      width: 100%; /* Memastikan teks mengambil 100% lebar dari elemen induk */
-      text-align: justify; /* Meratakan teks */
-  }
+#AboutUs article {
+  max-width: 1000px; /* Lebar maksimum teks */
+  width: 100%; /* Ambil lebar penuh dari elemen induk */
+  text-align: justify; /* Ratakan teks */
+}
 
-  #AboutUs h2 {
-      text-align: center; /* Mengatur perataan teks judul */
-  }
+#AboutUs h2 {
+  text-align: center; /* Pusatkan teks judul */
+}
 
-  #AboutUs p {
-      line-height: 1.6; /* Mengatur tinggi baris untuk kenyamanan membaca */
-      margin-bottom: 2px; /* Memberi jarak antar paragraf */
-  }
+#AboutUs p {
+  line-height: 1.6; /* Ketinggian baris */
+  margin-bottom: 2px; /* Margin bawah 2px */
+}
 
-
-  /* CSS Bagian Team */
-  .team-content {
-    width: 90%;
-    max-width: 1350px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-    align-items: center;
-    gap: 2rem;
-    text-align: center;
-    margin-top: 3rem;
+  /* START - CSS Bagian Team */
+.team-content {
+  width: 90%; /* Lebar konten tim */
+  max-width: 1350px; /* Lebar maksimum konten tim */
+  margin: 0 auto; /* Atur margin secara otomatis */
+  display: grid; /* Tampilkan sebagai grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto)); /* Atur grid responsif */
+  align-items: center; /* Pusatkan item secara vertikal */
+  gap: 2rem; /* Jarak antar item */
+  text-align: center; /* Pusatkan teks */
+  margin-top: 3rem; /* Atur margin atas */
 }
 
 .team-content img {
-    width: 40%;
-    height: auto;
-    border-radius: 150px;
-    margin-bottom: 15px;
+  width: 40%; /* Lebar gambar */
+  height: auto; /* Tinggi otomatis */
+  border-radius: 150px; /* Ganti sudut gambar */
+  margin-bottom: 15px; /* Atur margin bawah */
 }
 
-.box-team{
-    padding: 16px;
-    background: #075AA1;
-    border-radius: 15px;
-    transition: all .38s ease;
+.box-team {
+  padding: 16px; /* Padding kotak tim */
+  background: #075AA1; /* Warna latar belakang */
+  border-radius: 15px; /* Ganti sudut kotak */
+  transition: all .38s ease; /* Transisi untuk efek hover */
 }
 
-.box-team h3{
-    font-size: 18px;
-    font-weight: 600;
-    color: #EEF0F2;
-    margin-bottom: 8px;
+.box-team h3 {
+  font-size: 18px; /* Ukuran teks judul */
+  font-weight: 600; /* Ketebalan teks judul */
+  color: #EEF0F2; /* Warna teks judul */
+  margin-bottom: 8px; /* Atur margin bawah */
 }
 
-.box-team h5{
-    font-size: 12px;
-    font-weight: 300;
-    color: #EEF0F2;
-    margin-bottom: 8px;
+.box-team h5 {
+  font-size: 12px; /* Ukuran teks subjudul */
+  font-weight: 300; /* Ketebalan teks subjudul */
+  color: #EEF0F2; /* Warna teks subjudul */
+  margin-bottom: 8px; /* Atur margin bawah */
 }
 
 .box-team:hover {
-    transform: translateY(-10px);
-    cursor: pointer;
+  transform: translateY(-10px); /* Geser ke atas saat dihover */
+  cursor: pointer; /* Ganti kursor menjadi pointer */
 }
+/* END - CSS Bagian Team */
   
+/* CSS Tombol untuk kembali ke atas halaman */
 .fly {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 4em; 
-  position: fixed;
-  bottom: 20px;
-  right: 38px;
-  width: 60px;
-  height: 60px;
-  background-color: var(--main-clr);
-  color: white; 
-  border-radius: 50%; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
-  transition: transform 0.8s, background-color 0.8s; 
+  display: flex; /* Menampilkan sebagai flexbox */
+  justify-content: center; /* Pusatkan secara horizontal */
+  align-items: center; /* Pusatkan secara vertikal */
+  cursor: pointer; /* Ubah kursor menjadi pointer */
+  font-size: 4em; /* Ukuran teks */
+  position: fixed; /* Tetap di posisi tetap */
+  bottom: 20px; /* Jarak dari bawah */
+  right: 38px; /* Jarak dari kanan */
+  width: 60px; /* Lebar tombol */
+  height: 60px; /* Tinggi tombol */
+  background-color: var(--main-clr); /* Warna latar belakang */
+  color: white; /* Warna teks */
+  border-radius: 50%; /* Bentuk sudut */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Bayangan tombol */
+  transition: transform 0.8s, background-color 0.8s; /* Transisi untuk efek hover */
 }
 
 .fly:hover {
-  transform: scale(1.1); 
-  background-color: #0056b3; 
+  transform: scale(1.1); /* Perbesar saat dihover */
+  background-color: #0056b3; /* Ganti warna latar belakang saat dihover */
 }
 
-
   /* Bagian Footer */
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 20px;
-    height: auto;
-  }
+footer {
+  background-color: #333; /* Warna latar belakang footer */
+  color: #fff; /* Warna teks */
+  text-align: center; /* Pusatkan teks secara horizontal */
+  padding: 10px 20px; /* Padding atas dan bawah 10px, padding kanan dan kiri 20px */
+  height: auto; /* Tinggi footer menyesuaikan konten */
+}
