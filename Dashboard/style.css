@@ -319,12 +319,12 @@ p {
 .container .box .sales-text {
   color: black; /* Warna teks */
   font-size: 1rem; /* Ukuran font */
-  margin-top: 5px; /* Margin atas */
+  margin-top: 3px; /* Margin atas */
 }
 
 .container .box .icon-card {
-  margin-left: 30px; /* Margin kiri */
-  font-size: 2.5rem; /* Ukuran font */
+  margin-left: 23px; /* Margin kiri */
+  font-size: 2.1rem; /* Ukuran font */
   color: black; /* Warna teks */
 }
 
@@ -432,6 +432,8 @@ option {
 }
 /* END CHART */
 
+
+
  /* Data Table */
 .main-table {
   background-color: white; /* Warna latar belakang putih */
@@ -455,6 +457,8 @@ table.dataTable {
 table.dataTable thead th {
   background-color: papayawhip; /* Warna latar belakang header */
 }
+
+
 
   /* CSS Bagian About Us */
 #AboutUs {
