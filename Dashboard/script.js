@@ -50,19 +50,19 @@ fetch('dataset13.json')
             // Menghitung total penjualan dari data yang sudah difilter
             const totalSales = filteredData.reduce((acc, item) => {
                 // Mengakumulasikan nilai penjualan setiap item setelah diubah ke tipe float
-                return acc + parseFloat(item['Sales'].replace('$', '').replace(',', '').replace('.', '').replace('-', '0'));
+                return acc + parseFloat(item['Sales'].replace('$', '').replace('.', '').replace('-', '0'));
             }, 0);
 
             // Menghitung total profit dari data yang sudah difilter
             const totalProfit = filteredData.reduce((acc, item) => {
                 // Mengakumulasikan nilai profit setiap item setelah diubah ke tipe float
-                return acc + parseFloat(item['Profit'].replace('$', '').replace(',', '').replace('.', '').replace('-', '0'));
+                return acc + parseFloat(item['Profit'].replace('$', '').replace('.', '').replace('-', '0'));
             }, 0);
 
             // Menghitung total produk dari data yang sudah difilter
             const totalProduct = filteredData.reduce((acc, item) => {
                 // Menambahkan jumlah produk jika terdapat Product ID pada item
-                return acc + (item['Product Name'] ? 1 : 0);
+                return acc + (item['Product ID'] ? 1 : 0);
             }, 0);
 
             // Menghitung total pelanggan dari data yang sudah difilter
@@ -346,6 +346,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     orderValues[item['Order ID']] = (orderValues[item['Order ID']] || 0) + sales;
                 });
 
+                // Mengurutkan data berdasarkan tahun
+                const sortedYears = Object.keys(salesByYear).sort((a, b) => a - b);
+                const sortedSales = sortedYears.map(year => salesByYear[year]);
+
                 // Mengambil lima pelanggan teratas berdasarkan penjualan
                 const topCustomers = Object.keys(customerSales).sort((a, b) => customerSales[b].sales - customerSales[a].sales).slice(0, 5);
                 const topCustomerLabels = topCustomers;
@@ -387,17 +391,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                // Total Sales Per Year
+                // Menampilkan chart
                 if (chartSalesYear) chartSalesYear.destroy();
                 chartSalesYear = new Chart(ctxSalesYear, {
                     type: 'bar',
                     data: {
-                        labels: [2014, 2015, 2016, 2017],
+                        labels: sortedYears,  // Menampilkan tahun-tahun sebagai label
                         datasets: [{
                             label: 'Total Sales Per Year',
-                            data: Object.values(salesByYear),
-                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-                            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                            data: sortedSales,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
                             borderWidth: 1
                         }]
                     },
@@ -413,9 +431,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 chartProfitability = new Chart(ctxProfitability, {
                     type: 'line',
                     data: {
-                        labels: [2014, 2015, 2016, 2017],
+                        labels: sortedYears,
                         datasets: [{
-                            label: 'Sales Profitability',
                             data: Object.values(profitability),
                             backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
                             borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
