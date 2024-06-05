@@ -62,7 +62,7 @@ fetch('dataset13.json')
             // Menghitung total produk dari data yang sudah difilter
             const totalProduct = filteredData.reduce((acc, item) => {
                 // Menambahkan jumlah produk jika terdapat Product ID pada item
-                return acc + (item['Product ID'] ? 1 : 0);
+                return acc + (item['Product Name'] ? 1 : 0);
             }, 0);
 
             // Menghitung total pelanggan dari data yang sudah difilter
