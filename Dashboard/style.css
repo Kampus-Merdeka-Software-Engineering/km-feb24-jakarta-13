@@ -406,7 +406,7 @@ option {
 .card-chart {
   width: 100%; /* Lebar penuh */
   box-sizing: border-box; /* Padding dan border termasuk dalam ukuran elemen */
-  padding: 40px; /* Padding */
+  padding: 20px; /* Padding */
   border: 1px solid #ccc; /* Border solid abu-abu */
   border-radius: 8px; /* Radius sudut 8px */
   background-color: #fff; /* Warna latar belakang putih */
@@ -429,17 +429,7 @@ option {
   padding-bottom: 5px; /* Padding bawah */
   margin-bottom: 10px; /* Margin bawah */
   text-align: center; /* Teks rata tengah */
-}
-
-.swiper-container {
-  width: 50%;
-  height: 50%;
-}
-.swiper-button-next,
-.swiper-button-prev {
-    color: #fff; /* Sesuaikan warna tombol */
-}
-/* END CHART */
+}/* END CHART */
 
 
 
