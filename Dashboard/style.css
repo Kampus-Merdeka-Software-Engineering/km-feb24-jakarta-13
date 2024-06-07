@@ -441,6 +441,7 @@ option {
   padding: 20px; /* Padding 20px */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan kotak */
   border-radius: 8px; /* Sudut bulatan */
+  overflow-x: auto; 
 }
 
 .main-table h1 {
