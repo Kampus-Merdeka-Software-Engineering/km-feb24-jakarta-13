@@ -31,7 +31,7 @@
     <nav>
         <!-- Logo -->
         <div>
-			<img src="IMG/Super Store Logo.jpg" class="logo1"> <!-- BARU --> 
+			<img style="margin-top: -6px;" src="img/Super Store Logo.jpg" class="logo1"> <!-- BARU --> 
 			<a href="index.html" class="logo">Superstore13-jkt</a> 
 		</div>
         <!-- Daftar Navigasi -->
@@ -176,7 +176,7 @@
 
 
 
-				<!-- CHART -->
+	<!-- CHART -->
     <!-- Container for the card layout using Swiper -->
         <div class="container-card swiper-container">
             <!-- Wrapper for each individual chart card -->
@@ -188,6 +188,7 @@
                         <div>
                             <!-- Canvas for displaying the chart (script.js) -->
                             <canvas id="chart-2"></canvas>
+							
                         </div>
                     </div>
                 </div>
@@ -587,11 +588,12 @@
                 `;
             });
 
-            // Mengganti isi body tabel dengan data yang sudah diisi
             $('#example tbody').html(tableBody);
 
-            // Menginisialisasi DataTable
-            $('#example').DataTable();
+            // Menginisialisasi DataTable dengan opsi responsif
+            $('#example').DataTable({
+                scrollX: true
+            });
         })
         .catch(error => {
             console.error('Error fetching the JSON data:', error);

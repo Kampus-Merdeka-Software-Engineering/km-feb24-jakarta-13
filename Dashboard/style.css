@@ -348,7 +348,7 @@ p {
   color: white; /* Warna teks saat dihover */
 }
 
-/* CSS Dropdown */
+/* Style untuk dropdown */
 .drop-down {
   display: flex; /* Menggunakan flexbox */
   align-items: center; /* Menyusun elemen secara vertikal */
@@ -373,7 +373,22 @@ select {
 option {
   padding: 5px; /* Padding pada opsi dropdown */
 }
-/* End CSS Dropdown */
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+  .drop-down {
+    flex-direction: column; /* Menyusun elemen secara vertikal */
+    align-items: center; /* Mengubah alignment agar dropdown menyesuaikan dengan lebar container */
+    gap: 12px; /* Menambah jarak antara elemen */
+  }
+
+  select {
+    flex: 0 1 10px; /* Menentukan lebar dropdown */
+    width: 190px;
+    font-size: 16px; /* Menjaga ukuran font */
+  }
+}
+
 
   
 /* CHART */
@@ -416,7 +431,7 @@ option {
 .card-chart {
   width: 100%; /* Lebar penuh */
   box-sizing: border-box; /* Padding dan border termasuk dalam ukuran elemen */
-  padding: 20px; /* Padding */
+  padding: 40px; /* Padding */
   border: 1px solid #ccc; /* Border solid abu-abu */
   border-radius: 8px; /* Radius sudut 8px */
   background-color: #fff; /* Warna latar belakang putih */
