@@ -684,8 +684,34 @@ document.addEventListener('DOMContentLoaded', () => {
                         datasets: [{
                             label: 'Average Order Value',
                             data: [aovValue],
-                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-                            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                            backgroundColor: sortedYears.map(year => {
+                                switch (year) {
+                                    case '2014':
+                                        return 'rgba(255, 99, 132, 0.2)'; // Merah
+                                    case '2015':
+                                        return 'rgba(54, 162, 235, 0.2)'; // Biru
+                                    case '2016':
+                                        return 'rgba(255, 206, 86, 0.2)'; // Kuning
+                                    case '2017':
+                                        return 'rgba(75, 192, 192, 0.2)'; // Hijau
+                                    default:
+                                        return 'rgba(153, 102, 255, 0.2)'; // Default
+                                }
+                            }),
+                            borderColor: sortedYears.map(year => {
+                                switch (year) {
+                                    case '2014':
+                                        return 'rgba(255, 99, 132, 1)'; // Merah
+                                    case '2015':
+                                        return 'rgba(54, 162, 235, 1)'; // Biru
+                                    case '2016':
+                                        return 'rgba(255, 206, 86, 1)'; // Kuning
+                                    case '2017':
+                                        return 'rgba(75, 192, 192, 1)'; // Hijau
+                                    default:
+                                        return 'rgba(153, 102, 255, 1)'; // Default
+                                }
+                            }),
                             borderWidth: 1
                         }]
                     },
@@ -700,3 +726,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCharts();
 });
+
