@@ -43,13 +43,23 @@ nav {
   z-index: 1; /* Membuat navbar berada di atas konten lainnya */
 }
 
-nav .logo {
-  color: #fff; /* Warna teks logo */
-  text-decoration-color: var(--main-clr); /* Warna garis bawah pada tautan logo menggunakan variabel kustom */
-  font-size: 25px; /* Ukuran font logo */
-  font-family: "Playfair Display", serif; /* Font logo */
-  font-style: italic; /* Gaya huruf miring */
-  font-weight: 100px 3px var(--main-clr); /* Ketebalan font logo menggunakan variabel kustom */
+/* BARU*/
+nav .logo1 {
+  position: fixed;
+  align-items: center;
+  height: auto;
+  bottom: auto;
+  width: 40px;
+} /* BARU */
+
+nav .logo { 
+  margin-LEFT: 40px; /* BARU */
+  color: #fff; 
+  text-decoration-color: var(--main-clr);
+  font-size: 25px;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 1000px 3px var(--main-clr)
 }
 
 nav ul {
