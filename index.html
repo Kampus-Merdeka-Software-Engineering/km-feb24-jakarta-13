@@ -545,8 +545,8 @@
 			});
 			//END -- SWIPER CHART --	
 				
-	// START -- DATA TABEL --
-	$(document).ready(function() {
+		// START -- DATA TABEL --
+$(document).ready(function() {
     // URL ke file JSON yang akan diambil datanya
     const jsonURL = 'dataset13_2.json';
 
@@ -560,7 +560,12 @@
             // Mengonversi Sales dan Profit menjadi nilai numerik
             limitedData.forEach(item => {
                 item.Sales = parseFloat(item.Sales.replace(/\./g, '').replace(',', '.').replace('$', ''));
+
+                // Cek jika nilai Profit valid
                 item.Profit = parseFloat(item.Profit.replace(/\./g, '').replace(',', '.').replace('$', ''));
+                if (isNaN(item.Profit)) {
+                    item.Profit = 0; // Atur nilai profit menjadi 0 jika tidak valid
+                }
             });
 
             // Mengurutkan data berdasarkan Sales dan Profit secara menurun
@@ -588,19 +593,18 @@
                 `;
             });
 
+            // Mengganti isi body tabel dengan data yang sudah diisi
             $('#example tbody').html(tableBody);
 
-            // Menginisialisasi DataTable dengan opsi responsif
-            $('#example').DataTable({
-                scrollX: true
-            });
+            // Menginisialisasi DataTable
+            $('#example').DataTable();
         })
         .catch(error => {
             console.error('Error fetching the JSON data:', error);
             $('#loading').text('Failed to load data.'); // Menampilkan pesan kesalahan jika terjadi kesalahan saat mengambil data
         });
 });
-	// END -- DATA TABEL --
+// END -- DATA TABEL --
 
 		</script>
 	</body>

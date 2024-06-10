@@ -78,6 +78,12 @@ fetch('dataset13.json')
             document.getElementById('totalCustomer').innerText = totalCustomer;
         }
 
+        // Set nilai default dropdown untuk tahun order date
+        document.getElementById('orderdate').value = '2014';
+
+        // Panggil fungsi filterData saat halaman dimuat
+        filterData();
+
         // Menambahkan event listener pada dropdown untuk memanggil fungsi filterData saat perubahan terjadi
         document.getElementById('dropdown').addEventListener('change', filterData);
     });
@@ -331,7 +337,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Menambahkan nilai penjualan per mode pengiriman
                     salesByShipMode[item['Ship Mode']] = (salesByShipMode[item['Ship Mode']] || 0) + sales;
                     // Menambahkan nilai penjualan per sub-kategori
-                    salesBySubCategory[item['Sub-Category']] = (salesBySubCategory[item['Sub-Category']] || 0) + sales;
+                    data.slice(0, 100).forEach(item => {
+                        // Filter data yang memiliki nilai sales tidak kosong
+                        if (item['Sales']) {
+                            // Filter berdasarkan Category
+                            if (salesByCategory[item['Category']]) {
+                                // Mendapatkan nilai penjualan dari data
+                                const sales = parseFloat(item['Sales'].replace(/\$|,/g, ''));
+
+                                // Menambahkan nilai penjualan per sub-kategori
+                                salesBySubCategory[item['Sub-Category']] = (salesBySubCategory[item['Sub-Category']] || 0) + sales;
+                            }
+                        }
+                    });
                     // Menambahkan nilai penjualan per segmen pelanggan
                     salesBySegment[item['Segment']] = (salesBySegment[item['Segment']] || 0) + sales;
 
@@ -346,20 +364,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     orderValues[item['Order ID']] = (orderValues[item['Order ID']] || 0) + sales;
                 });
 
-                // Mengurutkan data berdasarkan tahun
-                const sortedYears = Object.keys(salesByYear).sort((a, b) => a - b);
+                // Mengurutkan data berdasarkan tahun yang diinginkan
+                const desiredOrder = ['2014', '2015', '2016', '2017'];
+                const sortedYears = desiredOrder.filter(year => Object.keys(salesByYear).includes(year));
                 const sortedSales = sortedYears.map(year => salesByYear[year]);
+                const sortedProfitability = sortedYears.map(year => profitability[year]);
 
                 // Mengambil lima pelanggan teratas berdasarkan penjualan
                 const topCustomers = Object.keys(customerSales).sort((a, b) => customerSales[b].sales - customerSales[a].sales).slice(0, 5);
                 const topCustomerLabels = topCustomers;
                 const topCustomerSales = topCustomers.map(customer => customerSales[customer].sales);
 
-                //Menghitung nilai CLV untuk setiap pelanggan berdasarkan total penjualan yang dilakukan oleh setiap pelanggan.
-                const clvData = Object.keys(customerSales).map(customer => ({
-                    customer,
-                    clv: customerSales[customer].sales
-                })).sort((a, b) => b.clv - a.clv);
+                // Menghitung nilai CLV untuk setiap pelanggan berdasarkan total penjualan yang dilakukan oleh setiap pelanggan.
+                const clvData = Object.keys(customerSales)
+                    .map(customer => ({
+                        customer,
+                        clv: customerSales[customer].sales
+                    }))
+                    .sort((a, b) => b.clv - a.clv)
+                    .slice(0, 10); // Mengambil hanya 10 data teratas
 
                 const clvLabels = clvData.map(item => item.customer);
                 const clvValues = clvData.map(item => item.clv);
@@ -391,8 +414,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                // Menampilkan chart
+                // Total Sales Per Years
                 if (chartSalesYear) chartSalesYear.destroy();
+
                 chartSalesYear = new Chart(ctxSalesYear, {
                     type: 'bar',
                     data: {
@@ -400,22 +424,34 @@ document.addEventListener('DOMContentLoaded', () => {
                         datasets: [{
                             label: 'Total Sales Per Year',
                             data: sortedSales,
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
+                            backgroundColor: sortedYears.map(year => {
+                                switch (year) {
+                                    case '2014':
+                                        return 'rgba(255, 99, 132, 0.2)'; // Merah
+                                    case '2015':
+                                        return 'rgba(54, 162, 235, 0.2)'; // Biru
+                                    case '2016':
+                                        return 'rgba(255, 206, 86, 0.2)'; // Kuning
+                                    case '2017':
+                                        return 'rgba(75, 192, 192, 0.2)'; // Hijau
+                                    default:
+                                        return 'rgba(153, 102, 255, 0.2)'; // Default
+                                }
+                            }),
+                            borderColor: sortedYears.map(year => {
+                                switch (year) {
+                                    case '2014':
+                                        return 'rgba(255, 99, 132, 1)'; // Merah
+                                    case '2015':
+                                        return 'rgba(54, 162, 235, 1)'; // Biru
+                                    case '2016':
+                                        return 'rgba(255, 206, 86, 1)'; // Kuning
+                                    case '2017':
+                                        return 'rgba(75, 192, 192, 1)'; // Hijau
+                                    default:
+                                        return 'rgba(153, 102, 255, 1)'; // Default
+                                }
+                            }),
                             borderWidth: 1
                         }]
                     },
@@ -425,6 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
                 });
+
 
                 // Sales Profitability
                 if (chartProfitability) chartProfitability.destroy();
@@ -433,9 +470,81 @@ document.addEventListener('DOMContentLoaded', () => {
                     data: {
                         labels: sortedYears,
                         datasets: [{
-                            data: Object.values(profitability),
-                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
-                            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
+                            label: 'Total Profitability Per Year',
+                            data: sortedProfitability,
+                            backgroundColor: sortedYears.map(year => {
+                                switch (year) {
+                                    case '2014':
+                                        return 'rgba(255, 99, 132, 0.2)'; // Merah
+                                    case '2015':
+                                        return 'rgba(54, 162, 235, 0.2)'; // Biru
+                                    case '2016':
+                                        return 'rgba(255, 206, 86, 0.2)'; // Kuning
+                                    case '2017':
+                                        return 'rgba(75, 192, 192, 0.2)'; // Hijau
+                                    default:
+                                        return 'rgba(153, 102, 255, 0.2)'; // Default
+                                }
+                            }),
+                            borderColor: sortedYears.map(year => {
+                                switch (year) {
+                                    case '2014':
+                                        return 'rgba(255, 99, 132, 1)'; // Merah
+                                    case '2015':
+                                        return 'rgba(54, 162, 235, 1)'; // Biru
+                                    case '2016':
+                                        return 'rgba(255, 206, 86, 1)'; // Kuning
+                                    case '2017':
+                                        return 'rgba(75, 192, 192, 1)'; // Hijau
+                                    default:
+                                        return 'rgba(153, 102, 255, 1)'; // Default
+                                }
+                            }),
+                            borderWidth: 1,
+                            fill: false  // Untuk garis, tidak mengisi area di bawah garis
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: { beginAtZero: true }
+                        },
+                    }
+                });
+
+                // Total Sales Per Category
+                if (chartCategory) chartCategory.destroy();
+
+                chartCategory = new Chart(ctxCategory, {
+                    type: 'doughnut',
+                    data: {
+                        labels: Object.keys(salesByCategory),
+                        datasets: [{
+                            label: 'Total Sales Per Category',
+                            data: Object.values(salesByCategory),
+                            backgroundColor: Object.keys(salesByCategory).map(category => {
+                                switch (category) {
+                                    case 'Technology':
+                                        return 'rgba(255, 99, 132, 0.2)'; // Merah
+                                    case 'Furniture':
+                                        return 'rgba(54, 162, 235, 0.2)'; // Biru
+                                    case 'Office Supplies':
+                                        return 'rgba(255, 206, 86, 0.2)'; // Kuning
+                                    default:
+                                        return 'rgba(75, 192, 192, 0.2)'; // Default
+                                }
+                            }),
+                            borderColor: Object.keys(salesByCategory).map(category => {
+                                switch (category) {
+                                    case 'Technology':
+                                        return 'rgba(255, 99, 132, 1)'; // Merah
+                                    case 'Furniture':
+                                        return 'rgba(54, 162, 235, 1)'; // Biru
+                                    case 'Office Supplies':
+                                        return 'rgba(255, 206, 86, 1)'; // Kuning
+                                    default:
+                                        return 'rgba(75, 192, 192, 1)'; // Default
+                                }
+                            }),
                             borderWidth: 1
                         }]
                     },
@@ -446,26 +555,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                // Total Sales Per Category
-                if (chartCategory) chartCategory.destroy();
-                chartCategory = new Chart(ctxCategory, {
-                    type: 'doughnut',
-                    data: {
-                        labels: Object.keys(salesByCategory),
-                        datasets: [{
-                            label: 'Total Sales Per Category',
-                            data: Object.values(salesByCategory),
-                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
-                            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: { beginAtZero: true }
-                        }
-                    }
-                });
 
                 // Total Sales Per Ship Mode
                 if (chartShipMode) chartShipMode.destroy();
@@ -497,8 +586,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         datasets: [{
                             label: 'Total Sales Per Sub Category',
                             data: Object.values(salesBySubCategory),
-                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-                            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+                            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
                             borderWidth: 1
                         }]
                     },
@@ -512,6 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Total Sales Per Segment
                 if (chartSegment) chartSegment.destroy();
+
                 chartSegment = new Chart(ctxSegment, {
                     type: 'doughnut',
                     data: {
@@ -519,8 +609,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         datasets: [{
                             label: 'Total Sales Per Segment',
                             data: Object.values(salesBySegment),
-                            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-                            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                            backgroundColor: Object.keys(salesBySegment).map(segment => {
+                                if (segment === 'Consumer') return 'rgba(255, 99, 132, 0.2)'; // Merah
+                                if (segment === 'Home Office') return 'rgba(54, 162, 235, 0.2)'; // Biru
+                                if (segment === 'Corporate') return 'rgba(255, 206, 86, 0.2)'; // Kuning
+                                return 'rgba(75, 192, 192, 0.2)'; // Default
+                            }),
+                            borderColor: Object.keys(salesBySegment).map(segment => {
+                                if (segment === 'Consumer') return 'rgba(255, 99, 132, 1)'; // Merah
+                                if (segment === 'Home Office') return 'rgba(54, 162, 235, 1)'; // Biru
+                                if (segment === 'Corporate') return 'rgba(255, 206, 86, 1)'; // Kuning
+                                return 'rgba(75, 192, 192, 1)'; // Default
+                            }),
                             borderWidth: 1
                         }]
                     },
@@ -530,6 +630,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
                 });
+
 
                 // Top 5 Customers by Sales
                 if (chartTopCustomers) chartTopCustomers.destroy();

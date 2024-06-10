@@ -458,33 +458,64 @@ option {
 
 
 
- /* Data Table */
-.main-table {
-  background-color: white; /* Warna latar belakang putih */
-  width: 100%; /* Lebar 100% */
-  padding-left: 10px; /* Padding kiri 10px */
-  padding-right: 10px; /* Padding kanan 10px */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan kotak */
-  border-radius: 8px; /* Sudut bulatan */
-  overflow-x: auto; 
-  font-weight: 2;
+/* Data Table */
+/* CSS untuk menyesuaikan tampilan tabel */
+#example {
+  font-size: 13px; /* Ukuran font tabel */
 }
 
-.main-table h1 {
-  
-  text-align: center; /* Teks rata tengah */
-  margin-bottom: 10px; /* Margin bawah 10px */
+#example_wrapper {
+  padding: 10px; /* Padding untuk wrapper tabel */
 }
 
 table.dataTable {
-  width: 100%; /* Lebar 100% */
+  max-width: 1000px; /* Batasi lebar maksimum tabel */
+  width: 100%; /* Lebar tabel 100% */
   margin: 0 auto; /* Margin horizontal auto */
-  border-collapse: collapse; /* Gabungkan batas tabel */
+  border-collapse: collapse; /* Gabungkan batas tabel */ 
 }
 
 table.dataTable thead th {
   background-color: papayawhip; /* Warna latar belakang header */
+  padding: 8px; /* Padding sel header */
+  text-align: left; /* Teks rata kiri */
 }
+
+table.dataTable tbody td {
+  padding: 8px; /* Padding sel body */
+  border-bottom: 1px solid #ddd; /* Garis bawah pada setiap sel */
+}
+
+/* Gaya hover untuk baris tabel */
+table.dataTable tbody tr:hover {
+  background-color: #f5f5f5; /* Warna latar belakang saat hover */
+}
+
+/* Gaya striping baris tabel */
+table.dataTable tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Warna latar belakang untuk baris genap */
+}
+
+/* Gaya judul tabel */
+h1 {
+  text-align: center; /* Teks rata tengah */
+  margin-bottom: 10px; /* Margin bawah 10px */
+}
+
+/* Gaya kontainer utama */
+.main-table {
+  background-color: white;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow-x: auto; /* Menambahkan scrollbar horizontal jika melebihi lebar */
+  font-weight: 2;
+  max-width: 1200px; /* Batasi lebar maksimum tabel */
+  margin: 0 auto; /* Pusatkan tabel */
+}
+
 
 
 
