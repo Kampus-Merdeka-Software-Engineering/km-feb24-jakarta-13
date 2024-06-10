@@ -456,8 +456,6 @@ option {
   text-align: center; /* Teks rata tengah */
 }/* END CHART */
 
-
-
 /* Data Table */
 /* CSS untuk menyesuaikan tampilan tabel */
 #example {
@@ -505,7 +503,7 @@ h1 {
 /* Gaya kontainer utama */
 .main-table {
   background-color: white;
-  width: 100%;
+  width: 75%;
   padding-left: 10px;
   padding-right: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
