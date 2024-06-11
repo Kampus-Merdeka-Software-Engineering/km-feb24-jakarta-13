@@ -13,7 +13,6 @@
 
 
 ### Contributor
-|  |  |  |
 |--|--|--|
 |**No**| **Nama** | **Role** |
 | 1 | Randi Praditiya | Project Leader |
